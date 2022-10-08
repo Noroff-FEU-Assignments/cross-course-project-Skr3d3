@@ -1,0 +1,37 @@
+/*GENERAL*/
+.logo {
+    width:300px;
+}
+body {
+    display: grid;
+    min-height: 100vh;
+    margin:0;
+}
+footer, header, nav {
+    background-color: #170E2E;
+}
+footer > *, 
+header > *, 
+nav > * {
+    color: #F6EEF6;
+    text-decoration: none;
+    margin: 0 0 0 5px;
+}
+/* MOBILE */
+@media screen and (max-width: 600px) {
+    .desktopnav {
+        display:none;
+    }
+}
+/* TABLET */
+@media screen and (min-width: 601px) and (max-width:899px) {
+    .mobilenav {
+        display:none;
+    }
+}
+/* DESKTOP */
+@media screen and (min-width: 900px) {
+    .mobilenav {
+        display:none;
+    }
+}
