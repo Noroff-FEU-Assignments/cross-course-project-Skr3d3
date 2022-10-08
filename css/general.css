@@ -1,13 +1,15 @@
 /*GENERAL*/
 .logo {
     width:300px;
+    float:left;
+    z-index: 1000000;
 }
 body {
     display: grid;
     min-height: 100vh;
     margin:0;
 }
-footer, header, nav {
+footer, header, .navsection {
     background-color: #170E2E;
 }
 footer > *, 
@@ -17,6 +19,34 @@ nav > * {
     text-decoration: none;
     margin: 0 0 0 5px;
 }
+header {
+    height: auto;
+}
+.desktopnav {
+    float:left;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    height:auto;
+}
+.navsection {
+    float:left;
+    height:100%;
+    min-width: auto;
+    padding: 0px 10px;
+}
+.home-start {
+    display:flex;
+    flex-flow: column;
+}
+.sellingpoints {
+    display:grid;
+    grid-template-columns: 1fr auto;
+}
+.home-end {
+
+}
+
 /* MOBILE */
 @media screen and (max-width: 600px) {
     .desktopnav {
