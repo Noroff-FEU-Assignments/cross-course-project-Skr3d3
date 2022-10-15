@@ -33,7 +33,9 @@ h1, h2, h3 {
 }
 header h1 {
     font-size: 100%;
-    
+    grid-row-start: 2;
+    grid-column-start: 2;
+    margin: 0;
 }
 h2 {
     color: #6121C2;
@@ -62,7 +64,7 @@ footer ul li {
     min-width: 220px;
 }
 .logo {
-    width:10em;
+    width:14em;
 }
 .placeholder {
     width:auto;
@@ -100,11 +102,6 @@ footer ul li {
     margin: 20px 10px;
     border-radius: 100%;
 }
-.desktopnav {
-    display:flex;
-    flex-direction:column;
-    margin: 70px 10px;
-}
 .inputbox {
     border-radius: 7px;
 }
@@ -122,15 +119,20 @@ footer ul li {
     text-shadow: 0px -2px 7px #F6EEF6;
     font-size: 130%
 }
-.desktopnav > * {
-    margin: 15px 0;
-    text-decoration: underline;
-}
 .sidebar {
     float:left;
     height:100%;
     width: 90px;
     padding: 0px 10px;
+}
+.desktopnav > * {
+    margin: 15px 0;
+    text-decoration: underline;
+}
+.desktopnav {
+    display:flex;
+    flex-direction:column;
+    margin: 150px 10px;
 }
 .home-start, .home-end {
     display:flex;
@@ -178,22 +180,13 @@ footer ul li {
     overflow: hidden;
     max-height:600px;
 }
-
-
-/* DESKTOP */
-@media screen and (min-width: 1010px) {
-    .mobilenav {
-        display:none;
-    }
-    header {
-        position:sticky;
-    }
+.mobilenav {
+    display:none;
 }
+
 /* TABLET */
-@media screen /* and (min-width: 601px) */ and (max-width:1010px) {
-    .mobilenav {
-        display:none;
-    }
+@media screen /* and (min-width: 601px) */ and (max-width:1015px) {
+
     .sellingpoints {
         flex-direction: column;
         align-items: center;
@@ -221,6 +214,12 @@ footer ul li {
     }
     header > .cta {
         font-size:50%;
+    }
+    .desktopnav {
+        margin: 70px 10px;
+    }
+    .logo {
+        width:9em;
     }
 }
 /* MOBILE */
