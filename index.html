@@ -12,29 +12,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/58f57f3efa.js" crossorigin="anonymous"></script>
     <title>My first website</title>
 </head>
 
 <body>
-<header class="header" id="header">
+<header id="header">
     <!--horizontal header on top. Same on all devices, but less height on mobile-->
     <!--Tilted logo in header-->
-    <a href="index.html"><img src="images/logo_tilted.gif" alt="GameHub logo" class="logo"></a>
+        <a href="index.html"><img src="images/logo_tilted.gif" alt="GameHub logo" class="logo"></a>
+        <h1>- The universe of games</h1>
         <section class="headericons"> <!--This section is hidden on mobile-->
-            <a href="login.html">Log in</a>
-            <a href="orders.html">profile-image</a>
-            <a href="facorites.html">heart-image</a>
-            <a href="cart.html">cart-image</a>
+            <a class="cta" href="login.html">Log in</a>
+            <a class="cta" href="orders.html"><i class="fa-regular fa-user"></i></a>
+            <a class="cta" href="facorites.html"><i class="fa-regular fa-heart"></i></a> <!--<i class="fa-solid fa-heart"></i>-->
+            <a class="cta" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </section>
-            <div class="searchbar">SEARCHBARPLACEHOLDER</div>
+            <div class="searchbar">
+                <input class="inputbox" placeholder="search..." type="textboxt" name="search" id="search">
+                <label for="search" name="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+            </div>
 </header>
 
 <main>
 
-    <section class="navsection">
+    <section class="sidebar">
         <nav class="desktopnav">
             <!--Main navigation for dekstop and tablet. Vertical on left side. Hide at min-width: 601-->
-                <a href="index.html">Home</a>
+                <p class="active" href="index.html">Home</p>
                 <a href="index.html">About</a>
                 <a href="index.html">Contact</a>
             </nav>
@@ -48,7 +53,7 @@
 
     <section class="sellingpoints-section" id="sellingpoints-section">
         <div class="sellingpoints sellingpointsbackground1">
-            <div>
+            <div class="sellingpointstextarea">
                 <h2>Buy/Sell Games</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus elit elementum rutrum venenatis. In vel efficitur elit. Vivamus gravida eros eu turpis sagittis, vel fringilla lacus rutrum. Cras id viverra tellus, nec blandit est. Nam ut metus suscipit, sodales nisi sed, placerat arcu. Vestibulum et magna a magna malesuada rutrum sit amet vitae neque. Praesent eu condimentum mi, in placerat odio. Integer laoreet vulputate imperdiet. Sed hendrerit odio vel diam sollicitudin scelerisque. Nam vel est nec elit pretium volutpat id sed nibh.</p>
                 <div><a href="browsegames.html" class="cta">Browse Games</a></div>
@@ -62,7 +67,7 @@
             <div>
                 <img class="sellingpointsimage" src="images/maninfrontoftv.gif" alt="Man infront of TV">
             </div>
-            <div>
+            <div class="sellingpointstextarea">
                 <h2>Console/PC support</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus elit elementum rutrum venenatis. In vel efficitur elit. Vivamus gravida eros eu turpis sagittis, vel fringilla lacus rutrum. Cras id viverra tellus, nec blandit est. Nam ut metus suscipit, sodales nisi sed, placerat arcu. Vestibulum et magna a magna malesuada rutrum sit amet vitae neque. Praesent eu condimentum mi, in placerat odio. Integer laoreet vulputate imperdiet. Sed hendrerit odio vel diam sollicitudin scelerisque. Nam vel est nec elit pretium volutpat id sed nibh.</p>
                 <div><a href="browsegames.html" class="cta">Browse Games</a></div>
