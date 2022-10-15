@@ -14,7 +14,7 @@ body {
 footer, header, .sidebar {
     background-color: #170E2E;
 }
-:is(footer, header, nav) > * {
+:is(footer, footer li, header, nav) > * {
     color: #F6EEF6;
     text-decoration: none;
     margin: 0 0 0 5px;
@@ -38,6 +38,18 @@ header h1 {
 h2 {
     color: #6121C2;
     text-shadow: #170E2E;
+}
+footer {
+    max-height: auto;
+}
+footer > * {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+footer ul li {
+    margin: 5px 20px;
 }
 .desktopnav > *:hover {
     font-size: 130%;
@@ -212,7 +224,7 @@ h2 {
     }
 }
 /* MOBILE */
-@media screen and (max-width: 633px) {
+@media screen and (max-width: 635px) {
     .sidebar {
         display:none;
     }
