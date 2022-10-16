@@ -30,7 +30,7 @@
         </section>
             <div class="searchbar">
                 <input class="inputbox" placeholder="search..." type="textboxt" name="search" id="search">
-                <label for="search" name="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                <button class="searchbutton"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 </header>
 
@@ -84,22 +84,38 @@
 </main>
 
 <footer>
-    <!--Place mobile navigation here, hide at max-width 600px-->
-    <!--!! Use checkbox hack for now as navigation bar for mobile !!-->
-    <ul>
-        <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-        <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-    </ul>
-    <ul>
-        <li>copyright &copy;</li>
-    </ul>
-    <nav class=mobilenav>
-        <a href="index.html">Home</a>
-        <a href="index.html">About</a>
-        <a href="index.html">Contact</a>
-        <a href="index.html">Browse games</a>
-    </nav> 
+    <section class="desktopfooter">
+        <!--Place mobile navigation here, hide at max-width 600px-->
+        <!--!! Use checkbox hack for now as navigation bar for mobile !!-->
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+        <ul>
+            <li>copyright &copy;</li>
+        </ul>
+    </section>
+    <section class="mobilenav">
+        <nav>
+            <div>
+                <a class="mobilecta" href="orders.html"><i class="fa-solid fa-house"></i></a>
+                <a class="mobilecta" href="orders.html"><i class="fa-regular fa-user"></i></a>
+                <div>
+                <input class="hidden" type="checkbox" id="mobilenav">
+                <label for="mobilenav"><img src="/images/Gamehublogonotext.gif"></label>
+                </div>
+                <a class="mobilecta" href="facorites.html"><i class="fa-regular fa-heart"></i></a> <!--<i class="fa-solid fa-heart"></i>-->
+                <a class="mobilecta" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="checkboxhack">
+                <a href="index.html">Home</a>
+                <a href="index.html">About</a>
+                <a href="index.html">Contact</a>
+                <a href="index.html">Browse games</a>
+            </div>
+        </nav>
+    </section> 
 </footer>
 
 </body>

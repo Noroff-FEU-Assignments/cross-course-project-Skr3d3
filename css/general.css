@@ -11,10 +11,10 @@ body {
     margin:0;
     background-color: #F6EEF6;
 }
-footer, header, .sidebar {
+footer, header, .sidebar, .mobilenav {
     background-color: #170E2E;
 }
-:is(footer, footer li, header, nav) > * {
+:is(footer section, footer section li, header, nav, .mobilenav) > * {
     color: #F6EEF6;
     text-decoration: none;
     margin: 0 0 0 5px;
@@ -44,14 +44,17 @@ h2 {
 footer {
     max-height: auto;
 }
-footer > * {
+footer section > * {
     display: flex;
     justify-content: center;
     flex-direction: row;
     list-style-type: none;
 }
-footer ul li {
+footer section ul li {
     margin: 5px 20px;
+}
+.hidden {
+    display:none;
 }
 .desktopnav > *:hover {
     font-size: 130%;
@@ -102,17 +105,28 @@ footer ul li {
     margin: 20px 10px;
     border-radius: 100%;
 }
+.headericons {
+    grid-column-start: 4;
+    text-align:right;
+}
 .inputbox {
-    border-radius: 7px;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px 0;
+}
+.searchbutton {
+    background-color: #170E2E;
+    color: #F6EEF6;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    float:right;
+    margin: 9px 0 0 0
 }
 .searchbar {
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 2;
-    text-align:right;
-}
-.headericons {
-    grid-column-start: 4;
     text-align:right;
 }
 .active {
@@ -224,13 +238,61 @@ footer ul li {
 }
 /* MOBILE */
 @media screen and (max-width: 635px) {
+    
+    /*CHECKBOX HACK*/
+
+    .checkboxhack > * {
+        background-color: #170E2E;
+        color: #F6EEF6;
+        float: right;
+    }
+    .checkboxhack {
+        display: flex;
+        flex-direction: column;
+    }
+    #mobilenav:checked ~ .checkboxhack::after {
+        display:none;
+    }
+
+    .searchbutton {
+        display:none;
+    }
+    .searchbar {
+        z-index: 10000;
+        position:fixed;
+        margin: 65px 0 0 50%;
+    }
+    .mobilenav {
+        display: flex;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .mobilenav div:first-of-type {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .mobilenav nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .mobilecta {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #6121C2;
+        color: #F6EEF6;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
     .sidebar {
         display:none;
     }
     header section a:first-of-type  {
         display:none;
     }
-    .searchbar > label {
-        display:none;
-    }
+    
 }
