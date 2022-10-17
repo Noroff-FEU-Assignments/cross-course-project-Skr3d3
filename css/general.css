@@ -1,11 +1,10 @@
 /*GENERAL*/
 
-/* font-family: 'Source Code Pro', monospace; */
-
 html {
     scroll-behavior: smooth;
 }
 body {
+    font-family: arial, sans-serif;
     display: grid;
     min-height: 100vh;
     max-width: 100vw;
@@ -28,8 +27,8 @@ header {
     z-index: 10000;
     padding: 25px 0 0 0;
 }
-h1, h2, h3 {
-    font-family: 'Source Code Pro', monospace;
+h1, h2, h3, a  {
+    font-family: "MuseoModerno", monospace;
     font-weight: bolder;
 }
 header h1 {
@@ -60,7 +59,7 @@ footer {
 :is(.desktopnav, .checkboxhack)  > *:hover {
     font-size: 130%;
 }
-.cta:hover {
+.cta:is(:hover, :active) {
     color: #6121C2;
     background-color: #F6EEF6;
     border-width: 2px;
@@ -141,7 +140,7 @@ a:active {
 .sidebar {
     float:left;
     height:100%;
-    width: 90px;
+    width: 100px;
     padding: 0px 10px;
 }
 .desktopnav > * {
@@ -177,13 +176,15 @@ a:active {
     justify-content: space-around;
     align-items: center;
     margin: 50px 10px;
+    text-align:center;
 }
 .sellingpointstextarea {
-    border: solid 0.1rem #170e2e57;
+    flex: 1;
+    border: solid 0.3rem #170e2e57;
     background-color: #ffffffb3;
     max-width: 50%;
     min-width: 290px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding:120px 50px;
     margin: 20px;
 }
@@ -192,12 +193,12 @@ a:active {
 }
 
 .sellingpointsimage {
-    width: 70%;
-    max-width: 60rem;
+    border-radius: 10px;
+    flex: 1;
     align-self: center;
-    object-fit: cover;
-    overflow: hidden;
-    max-height:600px;
+    max-height: 70vh;
+    max-width: 100%;
+    opacity: 70%;
 }
 .mobilenav {
     display:none;
@@ -248,11 +249,15 @@ a:active {
     .checkboxhack > * {
         background-color: #170E2E;
         color: #F6EEF6;
+        margin: 5px 0;
+        padding: 5px 0;
+        text-decoration: none;
     }
     .checkboxhack {
         display:none;
         justify-content: center;
         flex-direction: column;
+        margin: 10px 0;
     }
     #mobilenav:checked ~ .checkboxhack {
         display:flex;
@@ -260,6 +265,9 @@ a:active {
 /*END OF CHECKBOX HACK*/ 
     footer {
         padding-bottom: 60px;
+    }
+    .logocontainer {
+        content: url("/images/gamehublogomobile.gif")
     }
     .desktopfooter ul:last-child {
         justify-content: end;
@@ -275,7 +283,7 @@ a:active {
     .searchbar {
         z-index: 10000;
         position:fixed;
-        margin: -20px 0 0 100vw;
+        right:0;
     }
     .mobilemenu {
         display: flex;
@@ -289,6 +297,7 @@ a:active {
         bottom: 0;
         max-width: 100%;
         min-width: 100vw;
+        max-height: 260px;
     }
     .mobilenav div:first-of-type {
         display:flex;
