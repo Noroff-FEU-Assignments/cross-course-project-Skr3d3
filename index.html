@@ -17,16 +17,15 @@
 </head>
 
 <body>
+    <a href="#welcome" class="skip">Skip to content</a>
 <header id="header">
-    <!--horizontal header on top. Same on all devices, but less height on mobile-->
-    <!--Tilted logo in header-->
         <a href="index.html" class="logocontainer"><img src="images/logo_tilted.gif" alt="GameHub logo" class="logo"></a>
         <h1>- The universe of games</h1>
         <section class="headericons"> <!--This section is hidden on mobile-->
             <a class="cta" href="login.html">Log in</a>
-            <a class="cta" href="orders.html"><i class="fa-regular fa-user"></i></a>
-            <a class="cta" href="facorites.html"><i class="fa-regular fa-heart"></i></a> <!--<i class="fa-solid fa-heart"></i>-->
-            <a class="cta" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="cta-round" href="orders.html"><i class="fa-regular fa-user"></i></a>
+            <a class="cta-round" href="favorites.html"><i class="fa-regular fa-heart"></i></a>
+            <a class="cta-round" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </section>
             <div class="searchbar">
                 <input class="inputbox" placeholder="search..." type="textboxt" name="search" id="search">
@@ -35,16 +34,35 @@
 </header>
 
 <main>
-    <section class="sidebar">
+    
+    <section class="sidebar"> <!--This section is hidden on mobile-->
         <nav class="desktopnav">
-            <!--Main navigation for dekstop and tablet. Vertical on left side. Hide at min-width: 601-->
                 <p class="active" href="index.html">Home</p>
                 <a href="index.html">About</a>
                 <a href="index.html">Contact</a>
             </nav>
     </section>
 
-    <section class="home-start">
+    <section class="mobilenav"> <!--This section is hidden in desktop view-->
+        <nav>
+            <div>
+                <a class="cta-round" href="orders.html"><i class="fa-solid fa-house"></i></a>
+                <a class="cta-round" href="orders.html"><i class="fa-regular fa-user"></i></a>
+                <a class="cta-round" href="facorites.html"><i class="fa-regular fa-heart"></i></a>
+                <a class="cta-round" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <input class="hidden" type="checkbox" id="mobilenav">
+            <label class="mobilemenu" for="mobilenav"><img src="/images/Gamehublogonotext.gif"></label>
+            <div class="checkboxhack">
+                <a class="active" href="index.html">Home</a>
+                <a href="index.html">About</a>
+                <a href="index.html">Contact</a>
+                <a href="index.html">Browse games</a>
+            </div>
+        </nav>
+    </section> 
+
+    <section id="welcome" class="home-start">
         <a href="browsegames.html" class="cta big">Browse Games</a>
         <a href="index.html" class="cta">Learn more</a>
         <a href="#sellingpoints-section" class="arrowdown"><img src="/images/arrowdown.gif"></a>
@@ -75,7 +93,7 @@
     </section>
 
     <section class="home-end">
-        <a href="#header" class="arrowup"><img src="/images/arrowup.gif"></a>
+        <a href="#welcome" class="arrowup"><img src="/images/arrowup.gif"></a>
         <a href="index.html" class="cta">Sign up now!<a>
         <a href="browsegames.html" class="cta big">Browse Games</a>
     </section>
@@ -84,8 +102,6 @@
 
 <footer>
     <section class="desktopfooter">
-        <!--Place mobile navigation here, hide at max-width 600px-->
-        <!--!! Use checkbox hack for now as navigation bar for mobile !!-->
         <ul>
             <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
@@ -95,24 +111,7 @@
             <li>copyright &copy;</li>
         </ul>
     </section>
-    <section class="mobilenav">
-        <nav>
-            <div>
-                <a class="mobilecta" href="orders.html"><i class="fa-solid fa-house"></i></a>
-                <a class="mobilecta" href="orders.html"><i class="fa-regular fa-user"></i></a>
-                <a class="mobilecta" href="facorites.html"><i class="fa-regular fa-heart"></i></a> <!--<i class="fa-solid fa-heart"></i>-->
-                <a class="mobilecta" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <input class="hidden" type="checkbox" id="mobilenav">
-            <label class="mobilemenu" for="mobilenav"><img src="/images/Gamehublogonotext.gif"></label>
-            <div class="checkboxhack">
-                <a class="active" href="index.html">Home</a>
-                <a href="index.html">About</a>
-                <a href="index.html">Contact</a>
-                <a href="index.html">Browse games</a>
-            </div>
-        </nav>
-    </section> 
+
 </footer>
 
 </body>
