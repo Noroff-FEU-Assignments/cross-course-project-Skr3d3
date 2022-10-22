@@ -28,6 +28,10 @@ header {
     padding: 25px 0 0 0;
     box-shadow: 0px 15px 18px 7px rgba(23,14,46,1);
 }
+header a:first-child {
+    margin: auto 10px;
+    min-width: 100px;
+}
 h1, h2, h3, a, .checkboxhack, .sidebar  {
     font-family: "MuseoModerno", monospace;
     font-weight: bolder;
@@ -82,25 +86,11 @@ footer {
     opacity: 0;
 }
 .cta-round {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #6121C2;
-    color: #F6EEF6;
-    text-decoration: none;
-    font-size: 1.2rem;
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.7),0px 10px 15px -3px rgba(0,0,0,0.7);
-    box-shadow: inset 0px 0px 5px 1px rgba(23,14,46,1)
 }
 .cta {
-    background-color: #6121C2;
-    color: #F6EEF6;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.2rem;
     width: 20%;
     min-width: 190px;
     border: solid #170E2E 1px;
@@ -108,8 +98,19 @@ footer {
     margin: 5px 0;
     white-space: nowrap;
     border-radius: 40px 0 40px 0;
+}
+.cta, .cta-round {
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: #6121C2;
+    color: #F6EEF6;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.7),0px 10px 15px -3px rgba(0,0,0,0.7);
-    box-shadow: inset 0px 0px 5px 1px rgba(23,14,46,1)
+    box-shadow: inset 0px 0px 5px 1px rgba(23,14,46,1);
+    transition-property: transform;
+    transition-duration: 0.2s;
 }
 .big {
     padding: 20px 70px;
@@ -121,11 +122,13 @@ footer {
     border-width: 2px;
     white-space: nowrap;
     transform: scale(1.1);
+}
+.arrowimg {
+    transition-property: transform;
     transition: 0.2s;
 }
 .arrowimg:is(:hover, :active) {
     transform: scale(1.1);
-    transition: 0.2s;
 }
 .headericons {
     grid-column-start: 4;
