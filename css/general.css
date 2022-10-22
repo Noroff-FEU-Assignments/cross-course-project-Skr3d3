@@ -32,7 +32,15 @@ h1, h2, h3, a, .checkboxhack, .sidebar  {
     font-family: "MuseoModerno", monospace;
     font-weight: bolder;
 }
-header h1 {
+h1 {
+    font-size: 2.3rem;
+    color: #F6EEF6;
+    text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
+}
+h1:after {
+    content: " on ALL platforms!";
+}
+header h3 {
     display:inline-flex;
     align-items: end;
     font-size: 100%;
@@ -55,15 +63,7 @@ footer {
     font-family: sans-serif;
     font-weight: 100;
     padding: 5px;
-}
-.desktopfooter > * {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    list-style-type: none;
-}
-.desktopfooter ul li {
-    margin: 5px 20px;
+    box-shadow: 0px 15px 18px 7px rgba(23,14,46,1);
 }
 .hidden {
     display:none;
@@ -123,11 +123,9 @@ footer {
     transform: scale(1.1);
     transition: 0.2s;
 }
-.arrowdown {
-    padding: 10% 30px 0 30px;
-}
-.arrowup {
-    padding: 0 30px 10% 30px;
+.arrowimg:is(:hover, :active) {
+    transform: scale(1.1);
+    transition: 0.2s;
 }
 .headericons {
     grid-column-start: 4;
@@ -185,10 +183,14 @@ footer {
 .home-start {
     background-image: linear-gradient(#f6eef614, #F6EEF6), url("../images/manwithvrheadset.gif");
 }
-.home-start > *, .home-end > * {
+:is(.home-start, .home-end) > * {
     margin:25px;
 }
+.home-end a:last-child {
+    margin: 25px auto 10%;
+}
 .home-end {
+    justify-content: end;
     background-image: linear-gradient(#F6EEF6, #f6eef614), url("../images/gameover.gif");
 }
 .sellingpoints {
@@ -202,10 +204,10 @@ footer {
     flex: 1;
     border: solid 0.3rem #170e2e57;
     background-color: #ffffffb3;
-    max-width: 50%;
+    max-width: 50rem;
     min-width: 300px;
     border-radius: 10px;
-    padding:120px 50px;
+    padding: 120px 50px;
     margin: 20px;
 }
 .sellingpointstextarea :is(h2, div)  {
@@ -220,6 +222,15 @@ footer {
     max-width: 100%;
     opacity: 70%;
 }
+.desktopfooter > * {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+.desktopfooter ul li {
+    margin: 5px 20px;
+}
 .mobilenav {
     display:none;
 }
@@ -230,15 +241,21 @@ footer {
     header {
         grid-template-columns: 9em 1fr auto auto;
     }
-    header h1 {
+    header h3 {
             display:none;
     }
     header > .cta {
             font-size:50%;
     }
+    h1 {
+        font-size: 130%;
+    }
     .sellingpoints {
         flex-direction: column;
         align-items: center;
+    }
+    .sellingpointstextarea {
+        max-width: 50%;
     }
     .sellingpointsbackground1, .sellingpointsbackground2 {
         background-size: cover;
@@ -298,6 +315,9 @@ footer {
     }
     header section :is(a, .cta-round) {
         display:none;
+    } 
+    h1:after {
+        content: "!";
     }
     .logocontainer {
         content: url("/images/gamehublogomobile.gif");
@@ -322,7 +342,7 @@ footer {
         max-height: 300px;
         overflow:scroll;
         border-radius: 10px;
-        padding:120px 50px;
+        padding: 0px 50px 120px;
         margin: 20px;
     }
     .sellingpointstextarea div a {
@@ -346,8 +366,9 @@ footer {
     .searchbar {
         z-index: 10000;
         position:fixed;
-        right:0;
+        right: -10px;;
         top: 10px;
+        transform: scale(0.8)
     }
     .mobilemenu {
         display: flex;
