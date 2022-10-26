@@ -11,6 +11,9 @@ body {
     background-color: #F6EEF6;
     overflow-x: hidden;
 }
+main {
+    margin-left: 100px;
+}
 footer, header, .sidebar, .mobilenav, .skip {
     background-color: #170E2E;
 }
@@ -18,18 +21,14 @@ footer, header, .sidebar, .mobilenav, .skip {
     color: #F6EEF6;
     text-decoration: none;
 }
-header:not(:last-child) {
+header:not(:last-child) /*not include mobile navigation*/ {
     display:grid;
-    grid-template-columns: 230px auto;
+    grid-template-columns: 220px auto;
     grid-template-rows: repeat(2, 50%);
     height: 120px;
     z-index: 1000;
-    padding: 25px 0 0 0;
+    padding: 25px 10px 0 0;
     box-shadow: 0px 15px 18px 7px rgba(23,14,46,1);
-}
-.headericons a:first-child {
-    margin: auto 10px;
-    min-width: 100px;
 }
 h1, h2, h3, a, .checkboxhack, .sidebar  {
     font-family: "MuseoModerno", monospace;
@@ -82,9 +81,9 @@ footer {
     position: fixed;
     z-index: 100;
 }
-.placeholder {
-    width:auto;
-    opacity: 0;
+.headericons a:first-child {
+    margin: auto 10px;
+    min-width: 100px;
 }
 .cta-round {
     border-radius: 50%;
@@ -164,7 +163,7 @@ footer {
     height: 100%;
     top: -10px;
     width: 100px;
-    padding: 30vh 0;
+    padding: 30vh 10px;
     box-shadow: 15px 5px 18px 7px rgba(23,14,46,1);
     position: fixed;
     display:flex;
@@ -196,34 +195,32 @@ footer {
     justify-content: end;
     background-image: linear-gradient(#F6EEF6, #f6eef614), url("../images/gameover.gif");
 }
-.sellingpoints {
-    height: 100vh;
-    display:flex;
-    justify-content: space-around;
+.sellingpoints-section-1, .sellingpoints-section-2 {
+    display: flex;
     align-items: center;
-    margin: 50px 0px;
+    height: 100vh;
+    margin-bottom: 50px;
 }
-.sellingpointstextarea {
-    flex: 1;
+:is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: solid 0.3rem #170e2e57;
     background-color: #ffffffb3;
     max-width: 50rem;
     min-width: 300px;
     border-radius: 10px;
-    padding: 120px 50px;
-    margin: 20px;
+    padding: 100px 50px;
+    margin: auto;
 }
-.sellingpointstextarea :is(h2, div)  {
-    text-align: center;
+.sellingpoints-section-1 {
+    background: linear-gradient(#F6EEF6, #f6eef643), url(../images/womanpointing.gif);
+    background-position: 50% 10%;
 }
-.sellingpointsimage {
-    border-radius: 10px;
-    flex: 1;
-    margin: 0 0 0 15px;
-    align-self: center;
-    max-height: 70vh;
-    max-width: 100%;
-    opacity: 70%;
+.sellingpoints-section-2 {
+    background: linear-gradient(#f6eef643, #F6EEF6), url(../images/maninfrontoftv.gif);
+    background-position: 10%;
+    background-size: cover;
 }
 .desktopfooter > * {
     display: flex;
@@ -253,27 +250,8 @@ footer {
     h1 {
         font-size: 130%;
     }
-    .sellingpoints {
-        flex-direction: column;
-        align-items: center;
-    }
-    .sellingpointstextarea {
+    :is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
         max-width: 50%;
-    }
-    .sellingpointsbackground1, .sellingpointsbackground2 {
-        background-size: cover;
-        background-repeat: none;
-    }
-    .sellingpointsbackground1 {
-        background: linear-gradient(#F6EEF6, #f6eef643), url(../images/womanpointing.gif);
-        background-position: 50% 10%;
-    }
-    .sellingpointsbackground2 {
-        background: linear-gradient(#f6eef643, #F6EEF6), url(../images/maninfrontoftv.gif);
-        background-position: 10%;
-    }
-    .sellingpointsimage {
-        display:none;
     }
     .headericons {
         font-size: 0.1em;
@@ -310,6 +288,9 @@ footer {
         min-width: 100vw;
         height: 100px;
     }
+    main {
+        margin: 0;
+    }
     .headericons :is(a, .cta-round) {
         display:none;
     } 
@@ -325,29 +306,16 @@ footer {
     /* CLASSES */ 
     .skip {
         display:none;
-        /* text-align: right;
-        position:relative;
-        top: 120px;
-        color:#f6eef6cd */
     }
     .home-start {
         margin: 100px 0 0 0;
     }
-    .sellingpointstextarea {
+    :is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
         max-width: 50%;
         min-width: 200px;
         max-height: 300px;
         overflow:scroll;
         border-radius: 10px;
-        padding: 0px 50px 120px;
-        margin: 20px;
-    }
-    .sellingpointstextarea div a {
-        font-weight: bolder;
-        font-size: 1rem;
-        width: 20%;
-        min-width: 190px;
-        padding: 5px 25px;
     }
     .desktopfooter ul:last-child {
         justify-content: end;
