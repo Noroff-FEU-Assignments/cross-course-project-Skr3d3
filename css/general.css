@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 /* GENERAL */
 
 html {
@@ -8,17 +10,17 @@ body {
     display: grid;
     min-height: 100vh;
     margin:0;
-    background-color: #F6EEF6;
+    background-color: var(--secondarycolor);
     overflow-x: hidden;
 }
 main {
     margin-left: 100px;
 }
 footer, header, .sidebar, .mobilenav, .skip {
-    background-color: #170E2E;
+    background-color: var(--backgroundcolor);
 }
 :is(footer section, footer section li, header, nav  ) > * {
-    color: #F6EEF6;
+    color: var(--secondarycolor);
     text-decoration: none;
 }
 header:not(:last-child) /*not include mobile navigation*/ {
@@ -35,11 +37,11 @@ h1, h2, h3, a, .checkboxhack, .sidebar  {
     font-weight: bolder;
 }
 h1 {
-    font-size: 2.3rem;
-    color: #F6EEF6;
+    font-size: 2.5rem;
+    color: var(--secondarycolor);
     text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
 }
-h1:after {
+.indexh1:after {
     content: " on ALL platforms!";
 }
 header h3 {
@@ -51,8 +53,8 @@ header h3 {
     position:relative;
 }
 h2 {
-    color: #6121C2;
-    text-shadow: #170E2E;
+    color: var(--primarycolor);
+    text-shadow: var(--backgroundcolor);
 }
 footer {
     max-height: auto;
@@ -61,7 +63,7 @@ footer {
 /* CLASSES */
 .skip {
     font-size: 0.5rem;
-    color: #F6EEF6;
+    color: var(--secondarycolor);
     font-family: sans-serif;
     font-weight: 100;
     padding: 5px;
@@ -70,6 +72,15 @@ footer {
 }
 .hidden {
     display:none;
+}
+.error404 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#f6eef614, var(--secondarycolor)), url("../images/manwithvrheadset.gif");
+    background-size: cover;
+    height: 100vh;
+    background-position: 30% 15%;
 }
 :is(.sidebar, .checkboxhack)  a:hover {
     transform: scale(1.2);
@@ -93,7 +104,7 @@ footer {
 .cta {
     width: 20%;
     min-width: 190px;
-    border: solid #170E2E 1px;
+    border: solid var(--backgroundcolor) 1px;
     padding: 10px 50px;
     margin: 5px 0;
     white-space: nowrap;
@@ -102,9 +113,10 @@ footer {
 .cta, .cta-round {
     text-decoration: none;
     font-size: 1.2rem;
-    background-color: #6121C2;
-    color: #F6EEF6;
+    background-color: var(--primarycolor);
+    color: var(--secondarycolor);
     display: inline-flex;
+    position: static;
     justify-content: center;
     align-items: center;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.7),0px 10px 15px -3px rgba(0,0,0,0.7);
@@ -117,8 +129,8 @@ footer {
     width: 30%;
 }
 :is(.cta, .cta-round):is(:hover, :active) {
-    color: #6121C2;
-    background-color: #F6EEF6;
+    color: var(--primarycolor);
+    background-color: var(--secondarycolor);
     border-width: 2px;
     white-space: nowrap;
     transform: scale(1.1);
@@ -140,8 +152,8 @@ footer {
     margin: 5px 0;
 }
 .searchbutton {
-    background-color: #170E2E;
-    color: #F6EEF6;
+    background-color: var(--backgroundcolor);
+    color: var(--secondarycolor);
     border: none;
     font-size: 1.2em;
     cursor: pointer;
@@ -155,7 +167,7 @@ footer {
     justify-content: end;
 }
 .active, a:active :not(.skip) {
-    text-shadow: 0px -2px 7px #F6EEF6;
+    text-shadow: 0px -2px 7px var(--secondarycolor);
     font-size: 130%;
 }
 .sidebar {
@@ -183,7 +195,7 @@ footer {
     background-position: 30% 15%;
 }
 .home-start {
-    background-image: linear-gradient(#f6eef614, #F6EEF6), url("../images/manwithvrheadset.gif");
+    background-image: linear-gradient(#f6eef614, var(--secondarycolor)), url("../images/manwithvrheadset.gif");
 }
 :is(.home-start, .home-end) > * {
     margin:25px;
@@ -193,7 +205,7 @@ footer {
 }
 .home-end {
     justify-content: end;
-    background-image: linear-gradient(#F6EEF6, #f6eef614), url("../images/gameover.gif");
+    background-image: linear-gradient(var(--secondarycolor), #f6eef614), url("../images/gameover.gif");
 }
 .sellingpoints-section-1, .sellingpoints-section-2 {
     display: flex;
@@ -214,11 +226,11 @@ footer {
     margin: auto;
 }
 .sellingpoints-section-1 {
-    background: linear-gradient(#F6EEF6, #f6eef643), url(../images/womanpointing.gif);
+    background: linear-gradient(var(--secondarycolor), #f6eef643), url(../images/womanpointing.gif);
     background-position: 50% 10%;
 }
 .sellingpoints-section-2 {
-    background: linear-gradient(#f6eef643, #F6EEF6), url(../images/maninfrontoftv.gif);
+    background: linear-gradient(#f6eef643, var(--secondarycolor)), url(../images/maninfrontoftv.gif);
     background-position: 10%;
     background-size: cover;
 }
@@ -262,8 +274,8 @@ footer {
     
 /* MOBILENAV CHECKBOXHACK */
     .checkboxhack > * {
-        background-color: #170E2E;
-        color: #F6EEF6;
+        background-color: var(--backgroundcolor);
+        color: var(--secondarycolor);
         margin: 5px 0;
         padding: 5px 0;
         text-decoration: none;
@@ -294,7 +306,7 @@ footer {
     .headericons :is(a, .cta-round) {
         display:none;
     } 
-    h1:after {
+    .indexh1:after {
         content: "!";
     }
     .logocontainer {
