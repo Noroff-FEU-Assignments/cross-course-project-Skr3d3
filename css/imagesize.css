@@ -1,0 +1,42 @@
+/* MOBILE DEVICE ONLY */
+@media screen and (max-width:1015px) {
+
+.error404 {
+    background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
+}
+.home-start {
+    background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
+}
+.home-end {
+    background-image: linear-gradient(var(--white), #f6eef614), url("../images/mobile/gameover.gif");
+}
+.sellingpoints-section-1 {
+    background: linear-gradient(var(--white), #f6eef643), url(../images/mobile/womanpointing.gif);
+}
+.sellingpoints-section-2 {
+    background: linear-gradient(#f6eef643, var(--white)), url(../images/mobile/maninfrontoftv.gif);
+}
+
+}
+
+
+/* DESKTOP ONLY */
+@media screen and (min-width:1016px) {
+
+    .error404 {
+        background-image: linear-gradient(#f6eef614, var(--white)), url("../images/manwithvrheadset.gif");
+    }
+    .home-start {
+        background-image: linear-gradient(#f6eef614, var(--white)), url("../images/manwithvrheadset.gif");
+    }
+    .home-end {
+        background-image: linear-gradient(var(--white), #f6eef614), url("../images/gameover.gif");
+    }
+    .sellingpoints-section-1 {
+        background: linear-gradient(var(--white), #f6eef643), url(../images/womanpointing.gif);
+    }
+    .sellingpoints-section-2 {
+        background: linear-gradient(#f6eef643, var(--white)), url(../images/maninfrontoftv.gif);
+    }
+    
+}

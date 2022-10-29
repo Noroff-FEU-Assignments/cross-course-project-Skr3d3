@@ -1,5 +1,6 @@
 @import url(variables.css);
-@import url(desktoponly.css);
+@import url(imagesize.css);
+/*All images are linked in imagesize.css for better load times on mobile devices*/
 
 /* GENERAL */
 
@@ -59,6 +60,9 @@ footer {
     box-shadow: 0px -15px 18px 7px rgba(23,14,46,1);
 }
 /* CLASSES */
+.indexh1:after {
+    content: " on ALL platforms!";
+}
 .skip {
     font-size: 0.5rem;
     color: var(--white);
@@ -75,7 +79,6 @@ footer {
     display:flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
     background-size: cover;
     height: 100vh;
     background-position: 30% 15%;
@@ -192,9 +195,6 @@ footer {
     background-size: cover;
     background-position: 30% 15%;
 }
-.home-start {
-    background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
-}
 :is(.home-start, .home-end) > * {
     margin:25px;
 }
@@ -203,7 +203,6 @@ footer {
 }
 .home-end {
     justify-content: end;
-    background-image: linear-gradient(var(--white), #f6eef614), url("../images/mobile/gameover.gif");
 }
 .sellingpoints-section-1, .sellingpoints-section-2 {
     display: flex;
@@ -224,12 +223,10 @@ footer {
     margin: auto;
 }
 .sellingpoints-section-1 {
-    background: linear-gradient(var(--white), #f6eef643), url(../images/mobile/womanpointing.gif);
     background-position: 50% 10%;
     background-size: cover;
 }
 .sellingpoints-section-2 {
-    background: linear-gradient(#f6eef643, var(--white)), url(../images/mobile/maninfrontoftv.gif);
     background-position: 10%;
     background-size: cover;
 }
@@ -247,7 +244,7 @@ footer {
 }
 
 /* TABLET */
-@media screen /* and (min-width: 601px) */ and (max-width:1015px) {
+@media screen and (max-width:1015px) {
 
     header {
         grid-template-columns: 9em 1fr auto auto;
