@@ -17,6 +17,9 @@
     background: linear-gradient(#f6eef643, var(--white)), url(../images/mobile/maninfrontoftv.gif);
 }
 .about-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/twocontrollers.gif)
+}
+.contact-page {
     background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/manoncomputer.gif)
 }
 }
@@ -41,6 +44,9 @@
         background: linear-gradient(#f6eef643, var(--white)), url(../images/maninfrontoftv.gif);
     }
     .about-image {
+        background: linear-gradient(#f6eef643, #f6eef643), url(../images/twocontrollers.gif)
+    }
+    .contact-image {
         background: linear-gradient(#f6eef643, #f6eef643), url(../images/manoncomputer.gif)
     }
     
