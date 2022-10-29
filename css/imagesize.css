@@ -16,7 +16,9 @@
 .sellingpoints-section-2 {
     background: linear-gradient(#f6eef643, var(--white)), url(../images/mobile/maninfrontoftv.gif);
 }
-
+.about-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/manoncomputer.gif)
+}
 }
 
 
@@ -37,6 +39,9 @@
     }
     .sellingpoints-section-2 {
         background: linear-gradient(#f6eef643, var(--white)), url(../images/maninfrontoftv.gif);
+    }
+    .about-image {
+        background: linear-gradient(#f6eef643, #f6eef643), url(../images/manoncomputer.gif)
     }
     
 }
