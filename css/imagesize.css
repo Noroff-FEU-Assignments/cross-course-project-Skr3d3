@@ -22,6 +22,9 @@
 .contact-page {
     background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/manoncomputer.gif)
 }
+.aftersales-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/controller-mac.gif)
+}
 }
 
 
@@ -48,6 +51,9 @@
     }
     .contact-image {
         background: linear-gradient(#f6eef643, #f6eef643), url(../images/manoncomputer.gif)
+    }
+    .aftersales-image {
+        background: linear-gradient(#f6eef643, #f6eef643), url(../images/controller-mac.gif)
     }
     
 }

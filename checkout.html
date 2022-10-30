@@ -19,12 +19,13 @@
 
 <header id="header">
     <a href="index.html" class="logocontainer"><img src="images/logo_tilted.gif" alt="GameHub logo" class="logo"></a>
-    <h3>- The universe of games</h3>
+    <h3 class="active">Checkout</h3>
+
         <section class="headericons"> <!--This section is hidden on mobile-->
             <a class="cta" href="index.html">Log in</a>
-            <a class="cta-round" href="index.html" alt="Profile"><i class="fa-regular fa-user"></i></a>
+            <a class="cta-round" href="orders.html" alt="Orders"><i class="fa-regular fa-user"></i></a>
             <a class="cta-round" href="browse.html" alt="Favorites"><i class="fa-regular fa-heart"></i></a>
-            <a class="cta-round" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="cta-round  cta-active" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
         </section>
             <div class="searchbar">
                 <input class="inputbox" placeholder="search..." type="textboxt" name="search" id="search">
@@ -33,22 +34,23 @@
             </div>
 
             <nav class="sidebar"> <!--Desktop navigation-->
-                <p class="active">Home</p>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
+                <a href="browse.html">Browse games</a>
             </nav>
 
-            <nav class="mobilenav"> <!--Desktop navigation-->
+            <nav class="mobilenav"> <!--Mobile navigation-->
                 <section>
                     <a class="cta-round" href="index.html" alt="Home"><i class="fa-solid fa-house"></i></a>
-                    <a class="cta-round" href="index.html" alt="Profile"><i class="fa-regular fa-user"></i></a>
+                    <a class="cta-round" href="orders.html" alt="Orders"><i class="fa-regular fa-user"></i></a>
                     <a class="cta-round" href="browse.html" alt="Favorites"><i class="fa-regular fa-heart"></i></a>
-                    <a class="cta-round" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="cta-round cta-active" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </section>
-                <input class="hidden" type="checkbox" id="mobilenav">
-                <label class="mobilemenu" for="mobilenav" alt="Hamburger-menu"><img src="/images/gamehublogonotext.gif"></label>
+                    <input class="hidden" type="checkbox" id="mobilenav">
+                    <label class="mobilemenu" for="mobilenav" alt="Hamburger-menu"><img src="/images/gamehublogonotext.gif"></label>
                 <section class="checkboxhack">
-                    <p class="active">Home</p>
+                    <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
                     <a href="browse.html">Browse games</a>
@@ -56,13 +58,30 @@
             </nav>
 </header>
 
-<main>
+<main class="aftersales-page">
 
-<section class="error404">
-    <h1>Under construction</h1>
+<section class="aftersales-textarea">
+    <h1>Checkout</h1>
 </section>
 
-    
+<section class="orders-area">
+    <div>
+        <h2>Placeholder order</h2>
+    </div>
+    <div>
+        <h2>Placeholder order</h2>
+    </div>
+    <div>
+        <h2>Placeholder order</h2>
+    </div>
+    <div>
+        <h2>Placeholder order</h2>
+    </div>
+</section>
+
+<section class="aftersales-image">
+</section>
+
 </main>
 
 <footer>
