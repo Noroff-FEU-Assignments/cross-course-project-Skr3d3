@@ -326,6 +326,26 @@ header:not(:last-child) /*not include mobile navigation*/ {
     min-height: 200px;
     margin: 10px auto;
 }
+.plusminusbutton {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.cart {
+    text-align: left;
+}
+.cart table {
+    
+}
+.quantity-box {
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px 5px;
+    width: 60px;
+    height: 40px;
+}
 .aftersales-image {
     grid-area: image;
 }
@@ -335,6 +355,12 @@ header:not(:last-child) /*not include mobile navigation*/ {
     max-width: 100vw;
     min-height: 80vh;
     background-size: cover;
+}
+.thumbnail {
+    width: 70%;
+    height: 70%;
+    float: left;
+    margin: 0 10px;
 }
 
 /* TABLET */
