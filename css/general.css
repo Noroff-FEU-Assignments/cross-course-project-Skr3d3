@@ -19,7 +19,7 @@ main, h3 {
     animation: show-page 0.5s forwards;
 }
 main {
-    margin-left: 100px;
+    margin-left: 120px;
 }
 footer, header, .sidebar, .mobilenav, .skip {
     background-color: var(--darkpurple);
@@ -92,7 +92,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
 }
 .headericons > * {
     margin: 0 5px;
-    z-index: 1002;
 }
 .inputbox {
     border-radius: 8px;
@@ -105,7 +104,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     border: none;
     font-size: 1.2em;
     cursor: pointer;
-    margin: 0 0 5px 0
+    margin: 0 15px 5px 0
 }
 .searchbar {
     grid-column-start: 4;
@@ -153,7 +152,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
 :is(.cta, .cta-round, .big):is(:hover, :active) {
     color: var(--purple);
     background-color: var(--white);
-    border-width: 2px;
     white-space: nowrap;
     transform: scale(1.1);
 }
@@ -308,6 +306,18 @@ header:not(:last-child) /*not include mobile navigation*/ {
     display: flex;
     flex-direction: column;
 }
+.order {
+    display:flex;
+    flex-direction: column-reverse;
+}
+.order a {
+    align-self: end;
+    min-width: 20%;
+    margin: 0 30px 10px 0;
+}
+.order table {
+    display: block; 
+}
 .orders-area > div {
     border: solid 0.3rem #170e2e57;
     background-color: #ffffffb3;
@@ -336,11 +346,11 @@ header:not(:last-child) /*not include mobile navigation*/ {
     header h3 {
             display:none;
     }
-    header > .cta {
-            font-size:50%;
-    }
     h1 {
         color: var(--purple);
+    }
+    main {
+    margin-left: 120px;
     }
     .indexh1 {
         font-size: 130%;
@@ -348,9 +358,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
     :is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
         max-width: 10rem;
         border-radius: 10px;
-    }
-    .headericons {
-        font-size: 0.1em;
     }
     /*About Page*/
     .about-page, .contact-page {  
