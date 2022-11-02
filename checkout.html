@@ -60,27 +60,33 @@
 
 <main class="aftersales-page">
 
-<section class="aftersales-textarea">
-    <h1>Checkout</h1>
-</section>
+    <section class="aftersales-textarea">
+        <h1>Checkout</h1>
+    </section>
 
-<section class="orders-area">
-    <div>
-        <h2>Placeholder order</h2>
-    </div>
-    <div>
-        <h2>Placeholder order</h2>
-    </div>
-    <div>
-        <h2>Placeholder order</h2>
-    </div>
-    <div>
-        <h2>Placeholder order</h2>
-    </div>
-</section>
+    <section class="checkout-area">
+        <h2>Payment Information</h2>
 
-<section class="aftersales-image">
-</section>
+        <input class="inputbox" type="text" placeholder="Cardholder name" name="name" id="name">
+        <label class="hidden" for="name">Cardholder name</label>
+
+        <input class="inputbox" type="number" placeholder="Card number" name="cardnumber" id="cardnumber">
+        <label class="hidden" for="cardnumber">Card number</label>
+
+        <div>
+            <input class="inputbox" type="text" placeholder="Expiration" name="expiration" id="expiration">
+            <label class="hidden" for="expiration">Expiration</label>
+            <input class="inputbox" type="number" placeholder="CVC" name="cvc" id="cvc">
+            <label class="hidden" for="cvc">CVC</label>
+        </div>
+        
+        <input type="checkbox" name="checkbox" id="checkbox">
+        <label for="checkbox" name="checkbox">Remember card information</label>
+        <span class="centeralignment"><a href="orders.html" class="cta cta-aftersales">Buy</a> </span>
+    </section>
+
+    <section class="aftersales-image">
+    </section>
 
 </main>
 

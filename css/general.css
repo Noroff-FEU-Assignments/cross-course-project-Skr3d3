@@ -65,6 +65,10 @@ footer {
 .hidden {
     display:none;
 }
+.centeralignment {
+    display:flex;
+    justify-content: center;
+}
 /* Header */
 header:not(:last-child) /*not include mobile navigation*/ {
     display:grid;
@@ -148,6 +152,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .big {
     transform: scale(1.4);
     margin: 20px;
+}
+.cta-aftersales {
+    background-color: #CC356E;
 }
 :is(.cta, .cta-round, .big):is(:hover, :active) {
     color: var(--purple);
@@ -323,6 +330,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     background-color: #ffffffb3;
     border-radius: 10px;
     width: 500px;
+    max-width: 95vw;
     min-height: 200px;
     margin: 10px auto;
 }
@@ -528,7 +536,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
         display:none;
     }
 
-    /*Other Pages*/
+/*Other Pages*/
     .about-page, .contact-page, .games-page, .aftersales-page {
         margin: 120px 0 0 0;
     }
