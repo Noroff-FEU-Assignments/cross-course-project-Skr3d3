@@ -97,7 +97,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .headericons > * {
     margin: 0 5px;
 }
-.inputbox {
+.searchinput {
     border-radius: 8px;
     padding: 5px;
     margin: 5px 0;
@@ -155,6 +155,10 @@ header:not(:last-child) /*not include mobile navigation*/ {
 }
 .cta-aftersales {
     background-color: #CC356E;
+    margin: 30px;
+    position: fixed;
+    top: 80vh;
+    left: 30vh;
 }
 :is(.cta, .cta-round, .big):is(:hover, :active) {
     color: var(--purple);
@@ -342,8 +346,20 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .cart {
     text-align: left;
 }
-.cart table {
-    
+.checkout-area form {
+    display:flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.checkout-area {
+    margin-left: 40px;
+}
+.inputbox {
+    max-width: 80%;
+    border-radius: 15px;
+    min-width: 200px;
+    min-height: 30px;
+    margin: 10px;
 }
 .quantity-box {
     text-align: center;
@@ -543,6 +559,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
        
     .about-textarea, .contact-textarea {
         min-width: 200px;
+    }
+    .checkout-area form {
+        white-space: inherit;
     }
 }
 
