@@ -19,7 +19,7 @@ main, h3 {
     animation: show-page 0.5s forwards;
 }
 main {
-    margin-left: 120px;
+    margin-left: 130px;
 }
 footer, header, .sidebar, .mobilenav, .skip {
     background-color: var(--darkpurple);
@@ -34,6 +34,7 @@ h1, h2, h3, a, .checkboxhack, .sidebar  {
 }
 h1 {
     font-size: 2.5rem;
+    text-align: center;
     color: var(--purple);
     text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
 }
@@ -386,6 +387,42 @@ header:not(:last-child) /*not include mobile navigation*/ {
     float: left;
     margin: 0 10px;
 }
+.games-page {
+    margin-top: 50px
+}
+.browse {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 30px;
+}
+.browse div {
+    display: flex;
+    flex-direction: column;
+}
+.browse div img {
+    width:100%;
+    margin: -30px 0;
+    opacity: 70%;
+    z-index: -1;
+}
+.browse div span:first-child {
+    z-index: 1;
+    border: solid 0.3rem #170e2e57;
+    background-color: #ffffffb3;
+}
+.browse div span:first-child { 
+    justify-content: space-between;
+}
+.browse div span { 
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.browse div span:last-child a {
+    min-width: 10%;
+    padding: 10px 20px;
+    margin: 5px 20px;
+}
 
 /* TABLET */
 @media screen and (max-width:1015px) {
@@ -433,6 +470,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .contact-textarea .big:hover {
         transform: scale(1.1);
+    }
+    .browse {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -562,6 +602,12 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .checkout-area form {
         white-space: inherit;
+    }
+    .browse {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .games-page {
+        margin-top: 160px
     }
 }
 
