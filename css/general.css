@@ -45,6 +45,10 @@ header h3 {
     grid-row-start: 2;
     grid-column-start: 2;
 }
+header h3 > * {
+    color: var(--white);
+    text-decoration: none;
+}
 h2 {
     color: var(--purple);
     text-shadow: var(--darkpurple);
@@ -210,16 +214,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
     display:none;
 }
 
-/*Under Construction Page*/
-.error404 {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    height: 100vh;
-    background-position: 30% 15%;
-}
-
 /*Landing Page*/
 .indexh1:after {
     content: " on ALL platforms!";
@@ -302,23 +296,26 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .textarea pre {
     font-size: 1.5rem;
 }
-.product-page .product-image {
+.product-image {
     display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
 }
-.product-page .product-image img {
-    transform: scale(0.6);
-
+.product-thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
-.thumbnail {
-    width: 70%;
-    height: 70%;
-    float: left;
-    margin: 0 10px;
+.product-thumbnails > * {
+    max-width: 25%;
 }
 .games-page {
     margin: 50px 10px 50px 140px;
 }
 .browse {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px 30px;
@@ -326,30 +323,36 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .browse div {
     display: flex;
     flex-direction: column;
+    border: solid 0.3rem #170e2e57;
+}
+.browse div .cta-round {
+    position: absolute;
+    align-self: end;
+    margin-top: 60px;
 }
 .browse div img {
-    width:100%;
-    margin: -30px 0;
-    opacity: 70%;
+    max-width:100%;
+    margin: auto;
+    opacity: 90%;
     z-index: -1;
 }
-.browse div span:first-child {
-    z-index: 1;
-    border: solid 0.3rem #170e2e57;
-    background-color: #ffffffb3;
+.browse div span :is(h2, p) {
+    margin: 20px;
 }
-.browse div span:first-child { 
-    justify-content: space-between;
-}
-.browse div span { 
+.browse div span, .browsebuttons { 
+    max-width: 100%;
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
 }
-.browse div span:last-child a {
-    min-width: 10%;
-    padding: 10px 20px;
-    margin: 5px 20px;
+.browse div span:first-child {
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+.browsebuttons > * {
+    min-width: 70px;;
+    padding: 10px 14%;
+    margin: 20px 5px;
 }
 /*Aftersales pages*/
 
@@ -397,6 +400,10 @@ header:not(:last-child) /*not include mobile navigation*/ {
 }
 .cart {
     text-align: left;
+}
+.thumbnail {
+    width: 90%;
+    margin: 5px;
 }
 .checkout-area form {
     display:flex;
@@ -467,9 +474,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
         min-width: 300px;
         border-radius: 10px;
         padding: 50px;
-        margin: 50px 0 0 0;
-    }
-    .textarea {
+        margin: 50px;
+    } 
+    .textarea div {
         white-space: nowrap;
     }
     .textarea .big {
@@ -481,6 +488,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .browse {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .product-page {
     }
 }
 
@@ -649,6 +658,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     padding: 30px;
 }
 }
+
 
 /* KEYFRAMES */
 @keyframes show-page {

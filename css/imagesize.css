@@ -25,7 +25,35 @@
 .aftersales-page {
     background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/controller-mac.gif)
 }
+/*Product Pages*/
+.product1-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product2-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product3-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
 .product4-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product5-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product6-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product7-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product8-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product9-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product10-page {
     background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
 }
 }
@@ -58,8 +86,9 @@
     .aftersales-image {
         background: linear-gradient(#f6eef643, #f6eef643), url(../images/controller-mac.gif)
     }
+    /*
     .product4 {
         background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
     }
-    
+    */
 }
