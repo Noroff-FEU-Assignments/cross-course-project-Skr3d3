@@ -4,7 +4,7 @@
 .error404 {
     background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
 }
-.home-start {
+.home-start, .loginsignup {
     background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
 }
 .home-end {
@@ -65,7 +65,7 @@
     .error404 {
         background-image: linear-gradient(#f6eef614, var(--white)), url("../images/manwithvrheadset.gif");
     }
-    .home-start {
+    .home-start, .loginsignup {
         background-image: linear-gradient(#f6eef614, var(--white)), url("../images/manwithvrheadset.gif");
     }
     .home-end {

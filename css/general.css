@@ -163,7 +163,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     margin: 30px;
     position: fixed;
     top: 80vh;
-    left: 30vh;
+    left: 20vw;
 }
 :is(.cta, .cta-round, .big):is(:hover, :active) {
     color: var(--purple);
@@ -221,7 +221,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .indexh1 {
     color: var(--white);
 }
-.home-start, .home-end {
+.home-start, .home-end, .loginsignup {
     display:flex;
     flex-flow: column;
     height: 100vh;
@@ -371,6 +371,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     grid-area: orders;
     display: flex;
     flex-direction: column;
+    margin: 10px 10px 100px 10px;
 }
 .order {
     display:flex;
@@ -400,6 +401,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
 }
 .cart {
     text-align: left;
+
 }
 .thumbnail {
     width: 90%;
@@ -489,7 +491,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
     .browse {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .product-page {
+    .cta-aftersales {
+        left: 37vw;
     }
 }
 
@@ -608,14 +611,14 @@ header:not(:last-child) /*not include mobile navigation*/ {
     .sidebar {
         display:none;
     }
+    .cta-aftersales {
+        top: 71vh;
+        left: 10vw;
+    }
 
 /*Other Pages*/
     .about-page, .contact-page, .games-page, .aftersales-page, .product-page {
         margin: 120px 0 0 0;
-    }
-       
-    .about-textarea, .contact-textarea {
-        min-width: 200px;
     }
     .checkout-area form {
         white-space: inherit;
