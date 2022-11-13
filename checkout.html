@@ -60,33 +60,67 @@
 
 <main class="aftersales-page">
 
-    <section class="aftersales-textarea">
+    <section class="aftersales-textarea checkout">
         <h1>Checkout</h1>
-    </section>
 
-    <section class="checkout-area">
+        <h2>Payment Method</h2>
+        <input type="radio" id="visa" name="paymentmethod" class="hidden"><label for="visa"><img class="icon" src="/images/icons/visaicon.png"></label>
+        <input type="radio" id="paypal"name="paymentmethod" class="hidden">
+        <label for="paypal"><img class="icon" src="/images/icons/paypalicon.png"></label>
+        <input type="radio" id="vipps"name="paymentmethod" class="hidden">
+        <label for="vipps"><img class="icon" src="/images/icons/vippsicon.png"></label>
+        
         <h2>Payment Information</h2>
 
-    <form>
+<!--VISA FORM-->
+    <form class="visaform" id="visapayment" action="/orders.html" method="get">
+        <h3 class="centeralignment">Visa</h3>
+
         <input class="inputbox" type="text" placeholder="Cardholder name" name="name" id="name">
         <label class="hidden" for="name">Cardholder name</label>
-
         <input class="inputbox" type="number" placeholder="Card number" name="cardnumber" id="cardnumber">
         <label class="hidden" for="cardnumber">Card number</label>
-
         <div>
             <input class="inputbox" type="text" placeholder="Expiration" name="expiration" id="expiration">
             <label class="hidden" for="expiration">Expiration</label>
             <input class="inputbox" type="number" placeholder="CVC" name="cvc" id="cvc">
             <label class="hidden" for="cvc">CVC</label>
-        </div>
+        </div>        
         <div>
             <input type="checkbox" name="checkbox" id="checkbox">
             <label for="checkbox" name="checkbox">Remember card information</label>
         </div>
+        <input type="submit" form="visapayment" value="Buy" class="cta cta-aftersales"></input>
     </form>
-        <span class="centeralignment"><a href="orders.html" class="cta cta-aftersales">Buy</a> </span>
+
+<!--PAYPAL FORM-->
+    <form class="paypalform" id="paypalpayment" action="/orders.html" method="get">
+        <h3 class="centeralignment">PayPal</h3>
+
+        <label for="email" class="hidden">Email</label>
+        <input type="text" class="inputbox" id="email" name="email" placeholder="Email...">
+        <label for="password" class="hidden">Password</label>
+        <input type="password" class="inputbox" id="password" name="password" placeholder="Password...">
+        <div>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">Remember me</label>
+        </div>
+
+        <input type="submit" form="paypalpayment" value="Buy" class="cta cta-aftersales"></input>
+    </form>
+
+    <!--VIPPS FORM-->
+        <form class="vippsform" id="vippspayment" action="/orders.html" method="get">
+            <h3 class="centeralignment">Vipps</h3>
+
+            <label for="mobile" class="hidden">Email</label>
+            <input type="tel" class="inputbox" id="mobile" name="mobile" placeholder="Phonenumber...">
+
+            <input type="submit" form="vippspayment" value="Buy" class="cta cta-aftersales"></input>
+        </form>
+
     </section>
+
 
     <section class="aftersales-image">
     </section>

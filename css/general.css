@@ -74,6 +74,9 @@ footer {
     display:flex;
     justify-content: center;
 }
+.icon {
+    width: 4rem;
+}
 /* Header */
 header:not(:last-child) /*not include mobile navigation*/ {
     display:grid;
@@ -397,6 +400,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
     align-items: center;
     margin-bottom: 50px;
 }
+.checkout {
+    margin: 10vh 0 120vh 0;
+}
 .orders-area {
     grid-area: orders;
     display: flex;
@@ -431,14 +437,28 @@ header:not(:last-child) /*not include mobile navigation*/ {
 }
 .cart {
     text-align: left;
-
 }
 .thumbnail {
     width: 90%;
     margin: 5px;
 }
-.checkout-area form {
-    display:flex;
+#visa:checked ~ .visaform {
+    opacity: 100%;
+    z-index: 1;
+}
+#paypal:checked ~ .paypalform {
+    opacity: 100%;
+    z-index: 1;
+}
+#vipps:checked ~ .vippsform {
+    opacity: 100%;
+    z-index: 1;
+}
+.aftersales-page form {
+    opacity: 0%;
+    top: 700px;
+    position:absolute;
+    display: flex;
     flex-direction: column;
     white-space: nowrap;
 }
@@ -535,6 +555,12 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .textarea .big:hover {
         transform: scale(1.1);
+    }
+    .aftersales-textarea {
+        margin-top: 10vh;
+    }
+    .orders-area {
+        margin-bottom: 30vh;
     }
     .browse {
         grid-template-columns: repeat(2, minmax(0, 1fr));
