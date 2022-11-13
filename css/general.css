@@ -28,7 +28,7 @@ footer, header, .sidebar, .mobilenav, .skip {
     color: var(--white);
     text-decoration: none;
 }
-h1, h2, h3, a, .checkboxhack, .sidebar  {
+h1, h2, h3, a, .checkboxhack, .sidebar, .pricetag  {
     font-family: "MuseoModerno", monospace;
     font-weight: bolder;
 }
@@ -273,7 +273,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     background-position: 10%;
     background-size: cover;
 }
-/*Other Pages*/
+/*Other Pages General*/
 .about-page, .contact-page, .product-page {  
     display:grid;
     grid-template-columns: 60% 40%;
@@ -296,12 +296,39 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .textarea pre {
     font-size: 1.5rem;
 }
+.pricetag {
+    font-size: 2rem;
+    color: var(--purple);
+    text-shadow: 1px 1px 1px var(--darkpurple), -1px -1px 1px var(--darkpurple), 1px -1px 1px var(--darkpurple), -1px 1px 1px var(--darkpurple);
+    box-shadow: 0 0 10px 1px var(--darkpurple);
+    background-color: var(--white);
+    border: solid var(--darkpurple) 2px;
+    padding: 2px 50px 2px 20px;
+}
+.sale {
+    color: var(--pink);
+    border-color: var(--pink)
+}
+.oldprice {
+    opacity: 70%;
+    text-decoration: line-through solid #cc356f7e 0.3rem;
+    padding: 0px 10px;
+}
+.oldprice:before, .oldprice:after {
+    content:"--";
+    text-decoration: line-through solid var(--pink) 0.4rem;
+}
+.product-page h2 {
+    margin: 10px;
+    padding: 5px 10px;
+}
 .product-image {
     display:flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     max-width: 80%;
+    margin: 20px;
 }
 .product-thumbnails {
     display: flex;
@@ -337,7 +364,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
     z-index: -1;
 }
 .browse div span :is(h2, p) {
-    margin: 20px;
+    margin: 10px;
+    white-space: nowrap;
 }
 .browse div span, .browsebuttons { 
     max-width: 100%;
@@ -441,6 +469,23 @@ header:not(:last-child) /*not include mobile navigation*/ {
     min-height: 80vh;
     background-size: cover;
 }
+
+/* Browse page */
+@media screen and (max-width: 1379px) {
+    .browse {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        
+    }
+    .browse div span:first-child {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 885px) {
+    .browse {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
 /* TABLET */
 @media screen and (max-width:1015px) {
 
@@ -495,7 +540,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
         left: 37vw;
     }
 }
-
 /* MOBILE */
 @media screen and (max-width: 635px) {
     
@@ -625,6 +669,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .browse {
         grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .browse div span:first-child {
+        flex-direction: row;
     }
     .games-page {
         margin-top: 160px
