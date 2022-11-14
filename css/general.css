@@ -541,8 +541,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
     .textarea {
         border: solid 0.3rem #170e2e57;
         background-color: #ffffffb3;
-        max-width: 10rem;
-        min-width: 300px;
+        max-width: 300px;
+        min-width: 150px;
         border-radius: 10px;
         padding: 50px;
         margin: 20vh 0;
