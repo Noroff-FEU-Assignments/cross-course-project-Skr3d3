@@ -20,6 +20,7 @@ main, h3 {
 }
 main {
     margin-left: 120px;
+    max-width: 100vw;
 }
 footer, header, .sidebar, .mobilenav, .skip {
     background-color: var(--darkpurple);
@@ -596,8 +597,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     header {
         position: fixed;
-        width: 100%;
-        min-width: 100vw;
+        width: 100vw;
         height: 100px;
     }
     main {
@@ -655,9 +655,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
         text-align: center;
         position: fixed;
         bottom: 0;
-        width: 100%;
-        min-width: 100vw;
-        max-height: 260px;
+        min-width: 100%;
+        width: 100vw;
     }
     .mobilenav section:first-of-type {
         display:flex;
@@ -675,6 +674,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
     .checkboxhack a {
         margin: 0;
     }
+    .big {
+        transform: scale(1.2);
+    }
     .cta-round {
         z-index: 1000;
         font-size: 1rem;
@@ -690,6 +692,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
 
 /*Other Pages*/
+    main {
+        margin-top: 100px;
+    }
     .about-page, .contact-page, .games-page, .aftersales-page, .product-page {
         margin: 120px 0 0 0;
     }
