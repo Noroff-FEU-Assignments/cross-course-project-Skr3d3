@@ -309,7 +309,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     box-shadow: 0 0 10px 1px var(--darkpurple);
     background-color: var(--white);
     border: solid var(--darkpurple) 2px;
-    padding: 2px 50px 2px 20px;
+    padding: 2px 20px;
 }
 .sale {
     color: var(--pink);
@@ -339,7 +339,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .product-thumbnails {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
+    max-width: 100%;
 }
 .product-thumbnails > * {
     max-width: 25%;
@@ -694,6 +695,9 @@ header:not(:last-child) /*not include mobile navigation*/ {
 /*Other Pages*/
     main {
         margin-top: 100px;
+    }
+    .contact-page .textarea {
+        max-width: 50vw;
     }
     .about-page, .contact-page, .games-page, .aftersales-page, .product-page {
         margin: 120px 0 0 0;
