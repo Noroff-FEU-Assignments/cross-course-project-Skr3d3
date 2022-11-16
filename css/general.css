@@ -405,6 +405,11 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .checkout {
     margin: 10vh 0 120vh 0;
 }
+.visaform, .paypalform, .vippsform {
+    border: solid 0.3rem #170e2e57;
+    background-color: #ffffffb3;
+    border-radius: 10px;
+}
 .orders-area {
     grid-area: orders;
     display: flex;
