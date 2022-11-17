@@ -77,6 +77,10 @@ footer {
 }
 .icon {
     width: 4rem;
+    margin:auto;
+}
+.icon:is(:hover,:active) {
+    transform: scale(1.3);
 }
 /* Header */
 header:not(:last-child) /*not include mobile navigation*/ {
@@ -389,8 +393,8 @@ header:not(:last-child) /*not include mobile navigation*/ {
     padding: 10px 14%;
     margin: 20px 5px;
 }
-/*Aftersales pages*/
 
+/*Aftersales pages*/
 .aftersales-image, .aftersales-page {
     background-position: 0% 60%;
 }
@@ -399,16 +403,46 @@ header:not(:last-child) /*not include mobile navigation*/ {
     max-height: 140px;
     display:inline-flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;;
     margin-bottom: 50px;
 }
-.checkout {
-    margin: 10vh 0 120vh 0;
+.aftersales-page form {
+    opacity: 0%;
+    top: 700px;
+    left: 10vw;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
 }
-.visaform, .paypalform, .vippsform {
+.checkout {
+    display: flex;
+}
+.checkout-textarea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10vh 0 100vh 0;
+}
+
+/*CHECKBOX HACK CHECKOUT*/
+#visa:checked ~ .visaform {
+    opacity: 100%;
+    z-index: 1;
+}
+#paypal:checked ~ .paypalform {
+    opacity: 100%;
+    z-index: 1;
+}
+#vipps:checked ~ .vippsform {
+    opacity: 100%;
+    z-index: 1;
+}
+
+.visaform, .paypalform, .vippsform, .checkout-textarea div:nth-child(2) {
     border: solid 0.3rem #170e2e57;
     background-color: #ffffffb3;
     border-radius: 10px;
+    padding: 20px;
 }
 .orders-area {
     grid-area: orders;
@@ -448,29 +482,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .thumbnail {
     width: 90%;
     margin: 5px;
-}
-#visa:checked ~ .visaform {
-    opacity: 100%;
-    z-index: 1;
-}
-#paypal:checked ~ .paypalform {
-    opacity: 100%;
-    z-index: 1;
-}
-#vipps:checked ~ .vippsform {
-    opacity: 100%;
-    z-index: 1;
-}
-.aftersales-page form {
-    opacity: 0%;
-    top: 700px;
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    white-space: nowrap;
-}
-.checkout-area {
-    margin-left: 40px;
 }
 .inputbox {
     max-width: 80%;
@@ -574,6 +585,10 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .cta-aftersales {
         left: 37vw;
+    } 
+    .aftersales-page form {
+        top: 700px;
+        left: 30%;
     }
 }
 /* MOBILE */
@@ -707,9 +722,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
     .about-page, .contact-page, .games-page, .aftersales-page, .product-page {
         margin: 120px 0 0 0;
     }
-    .checkout-area form {
-        white-space: inherit;
-    }
     .browse {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -718,6 +730,14 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
     .games-page {
         margin-top: 160px
+    }
+    .aftersales-page form {
+        top: 700px;
+        left:0;
+        margin: 5px;
+    }
+    .aftersales-page form {
+        top: 550px;
     }
 }
 
@@ -749,7 +769,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .contact-page pre {
     font-size: 2rem;
     padding: 30px;
-}
 }
 
 
