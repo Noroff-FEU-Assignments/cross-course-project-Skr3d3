@@ -770,7 +770,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     font-size: 2rem;
     padding: 30px;
 }
-
+}
 
 /* KEYFRAMES */
 @keyframes show-page {
