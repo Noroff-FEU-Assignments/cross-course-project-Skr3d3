@@ -71,6 +71,23 @@ footer {
 .hidden {
     display:none;
 }
+.error {
+    display: none;
+    font-size: 0.9rem;
+    color:red;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 0.2px;
+}
+.submitmessage {
+    font-size: 0.9rem;
+    color:green;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 0.2px;
+}
 .centeralignment {
     display:flex;
     justify-content: center;
@@ -177,7 +194,12 @@ header:not(:last-child) /*not include mobile navigation*/ {
     color: var(--purple);
     background-color: var(--white);
     white-space: nowrap;
-    transform: scale(1.1);
+    transform: scale(1.03);
+}
+:is(.cta, .cta-round):active {
+    transition-property: transform;
+    transition-duration: 0s;
+    transform: scale(0.8);
 }
 .big:hover {
     transform: scale(1.5);
@@ -189,6 +211,19 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .active, a:active :not(.skip) {
     text-shadow: 0px -2px 7px var(--white);
     font-size: 130%;
+}
+.disabled {
+    color: var(--purple);
+    background-color: var(--white);
+    white-space: nowrap;
+}
+.disabled:is(:hover,:active) {
+    transform: scale(1);
+}
+#goback {
+    opacity: 70%;
+    margin: 50px;
+    max-width: 50px;
 }
 .sidebar {
     margin: 0;
@@ -290,6 +325,13 @@ header:not(:last-child) /*not include mobile navigation*/ {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
+}
+.contactform {
+    display: flex;
+    flex-direction: column;
+}
+.contactform > input {
+    margin-bottom: 20px;
 }
 .textarea {
     display: flex;
