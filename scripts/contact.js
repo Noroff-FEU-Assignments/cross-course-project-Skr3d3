@@ -87,6 +87,6 @@ formMessage.addEventListener("blur", showMessageError);
 submitButton.addEventListener("click", function(event) {
     event.preventDefault()
     submitMessage.style.display = "block"
-    submitMessage.innerHTML = "Thank you for the submission";
+    submitMessage.innerHTML = "Thank you for the submission! <3";
     contactForm.reset();
 })

@@ -211,6 +211,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .active, a:active :not(.skip) {
     text-shadow: 0px -2px 7px var(--white);
     font-size: 130%;
+    cursor: default;
 }
 .disabled {
     color: var(--purple);
@@ -220,9 +221,18 @@ header:not(:last-child) /*not include mobile navigation*/ {
 .disabled:is(:hover,:active) {
     transform: scale(1);
 }
+.gamecard {
+    transition-property: transform;
+    transition-duration: 0.4s;
+
+}
+.gamecard:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
 #goback {
     opacity: 70%;
-    margin: 50px;
     max-width: 50px;
 }
 .sidebar {
@@ -395,10 +405,11 @@ header:not(:last-child) /*not include mobile navigation*/ {
     margin: 50px 10px 50px 140px;
 }
 .browse {
+    max-width: 1500px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px 30px;
+    grid-gap: 50px;
 }
 .browse div {
     display: flex;
@@ -421,7 +432,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
     white-space: nowrap;
 }
 .browse div span, .browsebuttons { 
-    max-width: 100%;
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
@@ -431,9 +441,10 @@ header:not(:last-child) /*not include mobile navigation*/ {
     font-size: 1.5rem;
 }
 .browsebuttons > * {
-    min-width: 70px;;
+    min-width: 70px;
+    max-height: 100%;
     padding: 10px 14%;
-    margin: 20px 5px;
+    margin: 20px 20px;
 }
 
 /*Aftersales pages*/
@@ -556,6 +567,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
 @media screen and (max-width: 1379px) {
     .browse {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 30px;
         
     }
     .browse div span:first-child {
@@ -634,7 +646,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
     }
 }
 /* MOBILE */
-@media screen and (max-width: 635px) {
+@media screen and (max-width: 700px) {
     
 /* MOBILENAV CHECKBOXHACK */
     .checkboxhack > * {
