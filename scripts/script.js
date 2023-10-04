@@ -1,11 +1,23 @@
 // Back button
 function setupBackButton() {
     const backButton = document.getElementById("goback");
-    if (backButton) {backButton.addEventListener("click", function() {
-      if (document.referrer) {window.history.back();}
-      else {window.location.href = "/index.html";}
-    });};}
-    setupBackButton();
+    if (backButton) {
+        backButton.addEventListener("click", function() {
+            if (document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = "/index.html";
+            }
+        });
+        backButton.addEventListener("keydown", function(event) {
+            if (event.keyCode === 13) {
+                backButton.click();
+            }
+        });
+    }
+}
+
+setupBackButton();
 
 //Interactive cards
 
@@ -25,5 +37,10 @@ gameCard.addEventListener("click", function(event){
         openDetails(detailsUrl);
     }
 });
+gameCard.addEventListener("keydown", function(event){
+    if(event.keyCode === 13) {
+        const detailsUrl = gameCard.dataset.url;
+        openDetails(detailsUrl);
+    }
+    })
 });
-

@@ -232,6 +232,7 @@ header:not(:last-child) /*not include mobile navigation*/ {
 
 }
 #goback {
+    cursor: pointer;
     opacity: 70%;
     max-width: 50px;
 }
