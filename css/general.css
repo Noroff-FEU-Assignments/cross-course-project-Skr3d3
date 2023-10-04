@@ -460,11 +460,10 @@ header:not(:last-child) /*not include mobile navigation*/ {
     margin-bottom: 50px;
 }
 .aftersales-page form {
-    opacity: 0%;
     top: 700px;
     left: 10vw;
     position:absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 .checkout {
@@ -475,20 +474,6 @@ header:not(:last-child) /*not include mobile navigation*/ {
     align-items: center;
     flex-direction: column;
     margin: 10vh 0 100vh 0;
-}
-
-/*CHECKBOX HACK CHECKOUT*/
-#visa:checked ~ .visaform {
-    opacity: 100%;
-    z-index: 1;
-}
-#paypal:checked ~ .paypalform {
-    opacity: 100%;
-    z-index: 1;
-}
-#vipps:checked ~ .vippsform {
-    opacity: 100%;
-    z-index: 1;
 }
 
 .visaform, .paypalform, .vippsform, .checkout-textarea div:nth-child(2) {
