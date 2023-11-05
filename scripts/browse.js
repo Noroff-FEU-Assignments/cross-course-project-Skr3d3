@@ -37,7 +37,7 @@ function checkQuery(product) {
 const consumerKey = "ck_c96819796ee9527e5a501d1236f918d95e22e11a";
 const consuerSecret = "cs_b257a6cf47b989e0c67d95fc9d34a7efcace60fc";
 
-const baseUrl = `https://gamehub.skr3d3.com/wp-json/wc/v3/store/products?consumer_key=${consumerKey}&consumer_secret=${consuerSecret}`;
+const baseUrl = `https://gamehub.skr3d3.com/wp-json/wc/v3/products?consumer_key=${consumerKey}&consumer_secret=${consuerSecret}`;
 
 let productsData = [];
 
