@@ -1,9 +1,7 @@
 // Details Page
 
 const queryString = document.location.search;
-
 const params = new URLSearchParams(queryString);
-
 const id = params.get("id")
 
 const detailsContainer = document.querySelector(".details")
@@ -12,7 +10,7 @@ const detailsImageContainer = document.querySelector(".product-image")
 let navigationName = document.getElementById("navigationname");
 let title = document.querySelector("title");
 
-const detailsUrl = `http://localhost/gamehub/wp-json/wc/store/products/${id}`;
+const detailsUrl = `http://gamehub.skr3d3.com/wp-json/wc/store/products/${id}`;
 async function getDetails(url) {
     try{
         const response = await fetch(url);
