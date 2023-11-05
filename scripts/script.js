@@ -19,28 +19,16 @@ function setupBackButton() {
 
 setupBackButton();
 
-//Interactive cards
+// Search
 
-const gameCards = document.querySelectorAll(".gamecard")
+const searchBar = document.getElementById("search");
+const searchButton = document.querySelector(".searchbutton")
 
-const openDetails = (dataUrl) => {
-    if(dataUrl) {
-        window.location.href = dataUrl;
-    }
-};
+searchButton.addEventListener("click", function(){
+    window.location.href = `/browse.html?search=${searchBar.value}`
+})
 
-document.querySelectorAll(".gamecard").forEach(gameCard => {
-gameCard.addEventListener("click", function(event){
-    const clickedElement = event.target;
-    if(clickedElement.tagName !== "A" && clickedElement.tagName !== "I" && clickedElement.tagName !== "BUTTON" && clickedElement.tagName !== "INPUT") {
-        const detailsUrl = gameCard.dataset.url;
-        openDetails(detailsUrl);
-    }
-});
-gameCard.addEventListener("keydown", function(event){
-    if(event.keyCode === 13) {
-        const detailsUrl = gameCard.dataset.url;
-        openDetails(detailsUrl);
-    }
-    })
-});
+// Global Variables
+
+let loading = document.querySelector(".loadingcontainer")
+

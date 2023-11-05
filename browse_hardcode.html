@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome">
+    <meta name="description" content="Browse our game collection at GameHub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icons/gamehubicon.png">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/58f57f3efa.js" crossorigin="anonymous"></script>
+    <script defer src="scripts/browse.js"></script>
+    <script defer src="scripts/script.js"></script>
+    <title>GameHub - Browse all games</title>
+
+    <!-- Hotjar Tracking script -->
+    <script type="module" defer src="scripts/hotjar.js"></script>
+</head>
+
+<body>
+    <a href="#maincontent" class="skip">Skip to content</a>
+
+<header id="header">
+    <a href="index.html" class="logocontainer"><img src="images/logo_tilted.gif" alt="GameHub logo" class="logo"></a>
+    <h3 class="active">Browse Games</h3>
+
+        <section class="headericons"> <!--This section is hidden on mobile-->
+            <a class="cta" href="loginsignup.html">Log in</a>
+            <a class="cta-round" href="orders.html" alt="Profile"><i class="fa-regular fa-user"></i></a>
+            <a class="cta-round" href="browse.html" id="favourites" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+            <a class="cta-round" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </section>
+            <div class="searchbar">
+                <input class="searchinput" placeholder="search..." type="textboxt" name="search" id="search">
+                <label class="hidden" for="search">Searchbar</label>
+                <button class="searchbutton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <nav class="sidebar"> <!--Desktop navigation-->
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <p class="active">Browse games</p>
+            </nav>
+
+            <nav class="mobilenav"> <!--Mobile navigation-->
+                <section>
+                    <a class="cta-round" href="index.html" alt="Home"><i class="fa-solid fa-house"></i></a>
+                    <a class="cta-round" href="orders.html" alt="Profile"><i class="fa-regular fa-user"></i></a>
+                    <a class="cta-round" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+                    <a class="cta-round" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </section>
+                    <input class="hidden" type="checkbox" id="mobilenav">
+                    <label class="mobilemenu" for="mobilenav" alt="Hamburger-menu"><img src="/images/gamehublogonotext.gif"></label>
+                <section class="checkboxhack">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <p class="active">Browse Games</p>
+                </section>
+            </nav>
+</header>
+
+<main class="games-page">
+<h1> All Games</h1>
+<section id="maincontent" class="browse">
+    <div class="gamecard" data-url="products/product1.html" tabindex="0">
+        <span>
+            <h2>Ping Pong</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product2.html" tabindex="0">
+        <span>
+            <h2>Super Duper</h2>
+            <p class="pricetag sale">25$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers2.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product3.html" tabindex="0">
+        <span>
+            <h2>Black</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers3.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product4.html" tabindex="0">
+        <span>
+            <h2>Furious</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers4.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product5.html" tabindex="0">
+        <span>
+            <h2>Assassin</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers5.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product6.html" tabindex="0">
+        <span>
+            <h2>Space War</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers6.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product7.html" tabindex="0">
+        <span>
+            <h2>Racing</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers7.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product8.html" tabindex="0">
+        <span>
+            <h2>Boxer</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers8.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product9.html" tabindex="0">
+        <span>
+            <h2>Cyberpunk</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers9.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+    <div class="gamecard" data-url="products/product10.html" tabindex="0">
+        <span>
+            <h2>Forge Legend</h2>
+            <p class="pricetag">39$</p>
+        </span>
+        <a class="cta-round favourite" href="browse.html" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+        <div>
+        <img src="/images/thumbnails/GameHub_covers10.gif" alt="Coverphoto of the game">
+        <span class="overlaytext">Click for more info</span>
+        </div>
+        <span class="browsebuttons">
+            <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+        </span>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <section class="desktopfooter">
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+        <ul>
+            <li>copyright &copy;</li>
+        </ul>
+    </section>
+
+</footer>
+
+</body>
+</html>

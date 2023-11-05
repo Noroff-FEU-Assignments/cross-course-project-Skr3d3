@@ -1,5 +1,94 @@
+// Clickable cards
 
-//Add to cart Button
+const productContainer = document.querySelector(".products");
+const openDetails = (dataUrl) => {
+    if (dataUrl) {
+        window.location.href = dataUrl;
+    }
+}
+
+productContainer.addEventListener("click", function(event){
+    const clickedElement = event.target;
+    
+    if(["A", "I", "BUTTON", "INPUT"].includes(clickedElement.tagName)){
+        event.preventDefault();
+        return
+    }
+
+    const gameCard = clickedElement.closest(".gamecard")
+    if(gameCard) {
+        const detailsUrl = gameCard.getAttribute("data-url");
+        openDetails(detailsUrl);
+    }
+})
+
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const searchQuery = params.get("search");
+
+
+function checkQuery(product) {
+    return product.name.toLowerCase().includes(searchQuery.toLowerCase());
+    }
+
+
+// Fetch WordPress REST API
+
+const baseUrl = "http://localhost/gamehub/wp-json/wc/store/products";
+
+let productsData = [];
+
+const sortButtons = document.querySelector(".sortcontainer")
+
+sortButtons.style.display = "none";
+
+
+async function getProducts(url){
+
+    try{
+    const response = await fetch(url);
+    productsData = await response.json();
+    if(searchQuery){
+        productsData = productsData.filter(checkQuery);
+    }
+    displayProducts(productsData);
+    }
+    catch(error) {
+        console.error("Error fetching products", error)
+    }
+    finally{
+        loading.innerHTML = ""
+        sortButtons.style.display = "flex";
+    }
+}
+function displayProducts(products){
+    productContainer.innerHTML = "";
+
+products.forEach(function(product){
+    let thumbnailUrl = product.images.length > 0 ? product.images[0].src : "";
+    let altUrl = product.images.length > 0 ? product.images[0].alt : "";
+
+    productContainer.innerHTML += `
+<div class="gamecard" data-url="details.html?id=${product.id}" tabindex="0">
+<span>
+    <h2>${product.name}</h2>
+    <p class="pricetag">${product.price_html}</p>
+</span>
+<a class="cta-round favourite" href="" alt="Favorites"><i id="hearticon" class="fa-regular fa-heart"></i></a>
+<div>
+<img style="width:437px" src="${thumbnailUrl}" alt="${altUrl}">
+<span class="overlaytext">Click for more info</span>
+</div>
+<span class="browsebuttons">
+    <a href="cart.html" class="cta addcartbutton">Add to cart</a>
+</span>
+</div>
+    `
+        
+// Search/filter
+
+
+    //Add to cart Button
 const addToCartButton = document.querySelectorAll(".addcartbutton");
 
 function addToCart(button) {
@@ -70,3 +159,38 @@ function toggleFavMain() {
     heartIconMain.classList.add("fa-regular")
 }
 };
+})};
+
+getProducts(baseUrl)
+
+// Sort buttons
+
+nameBtn = document.getElementById("name");
+priceBtn  = document.getElementById("price");
+discountBtn  = document.getElementById("discount");
+
+nameBtn.addEventListener("click", function() {
+    const sortedProducts = [...productsData].sort((a,b) => a.name.localeCompare(b.name));
+    displayProducts(sortedProducts);
+    nameBtn.classList.add("active");
+    discountBtn.classList.remove("active");
+    priceBtn.classList.remove("active");
+});
+priceBtn.addEventListener("click", function(){
+    const sortedProducts = [...productsData].sort((a,b) => a.price_html.localeCompare(b.price_html));
+    displayProducts(sortedProducts);
+    priceBtn.classList.add("active");
+    nameBtn.classList.remove("active");
+    discountBtn.classList.remove("active");
+});
+discount.addEventListener("click", function() {
+    const sortedProducts = [...productsData].sort((a,b) => {
+        const discountA = parseFloat(a.prices.regular_price) - parseFloat(a.prices.sale_price);
+        const discountB = parseFloat(b.prices.regular_price) - parseFloat(b.prices.sale_price);
+        return discountB - discountA;
+    });
+    displayProducts(sortedProducts);
+    discountBtn.classList.add("active");
+    nameBtn.classList.remove("active");
+    priceBtn.classList.remove("active");
+});
