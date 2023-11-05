@@ -34,7 +34,7 @@ function checkQuery(product) {
 
 // Fetch WordPress REST API
 
-const baseUrl = "https://gamehub.skr3d3.com/wp-json/wc/store/products";
+const baseUrl = `https://gamehub.skr3d3.com/wp-json/wc/v3/store/products?consumer_key=${consumerKey}&consumer_secret=${consuerSecret}`;
 
 let productsData = [];
 

@@ -10,7 +10,7 @@ const detailsImageContainer = document.querySelector(".product-image")
 let navigationName = document.getElementById("navigationname");
 let title = document.querySelector("title");
 
-const detailsUrl = `https://gamehub.skr3d3.com/wp-json/wc/store/products/${id}`;
+const detailsUrl = `https://gamehub.skr3d3.com/wp-json/wc/store/products/${id}?consumer_key=${consumerKey}&consumer_secret=${consuerSecret}`;
 async function getDetails(url) {
     try{
         const response = await fetch(url);
