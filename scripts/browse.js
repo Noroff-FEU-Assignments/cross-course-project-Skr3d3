@@ -188,8 +188,8 @@ priceBtn.addEventListener("click", function(){
 });
 discount.addEventListener("click", function() {
     const sortedProducts = [...productsData].sort((a,b) => {
-        const discountA = parseFloat(a.prices.regular_price) - parseFloat(a.prices.sale_price);
-        const discountB = parseFloat(b.prices.regular_price) - parseFloat(b.prices.sale_price);
+        const discountA = parseFloat(a.regular_price) - parseFloat(a.sale_price);
+        const discountB = parseFloat(b.regular_price) - parseFloat(b.sale_price);
         return discountB - discountA;
     });
     displayProducts(sortedProducts);
