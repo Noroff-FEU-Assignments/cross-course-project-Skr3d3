@@ -50,3 +50,11 @@ products.forEach(function(product){
 })};
 
 getProducts(baseUrl)
+
+featuredContainer.addEventListener("click", function(){
+    const gameCard = clickedElement.closest(".gamecard")
+    if(gameCard) {
+        const detailsUrl = gameCard.getAttribute("data-url");
+        openDetails(detailsUrl);
+    }
+})
