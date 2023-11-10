@@ -57,8 +57,8 @@ const openDetails = (dataUrl) => {
     }
 }
 
-featuredContainer.addEventListener("click", function(){
-    const gameCard = clickedElement.closest(".gamecard")
+featuredContainer.addEventListener("click", function(event){
+    const gameCard = event.target.closest(".gamecard")
     if(gameCard) {
         const featuredUrl = gameCard.getAttribute("data-url");
         openDetails(featuredUrl);
