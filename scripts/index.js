@@ -30,9 +30,10 @@ async function getProducts(url){
     }
 }
 function displayFeatured(products){
+    const limitedProducts = products.slice(0,3);
     featuredContainer.innerHTML = "";
 
-products.forEach(function(product){
+limitedProducts.forEach(function(product){
     let thumbnailUrl = product.images.length > 0 ? product.images[0].src : "";
     let altUrl = product.images.length > 0 ? product.images[0].alt : "";
 
