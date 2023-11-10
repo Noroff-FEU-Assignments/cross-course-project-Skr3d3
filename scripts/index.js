@@ -18,7 +18,7 @@ featuredText.style.display = "none";
 async function getProducts(url){
 
     try{
-    const response = await fetch(url + "?featured=true?");
+    const response = await fetch(url + "&featured=true");
     productsData = await response.json();
     displayFeatured(productsData);
     }
@@ -30,7 +30,7 @@ async function getProducts(url){
     }
 }
 function displayFeatured(products){
-    featuredContainerContainer.innerHTML = "";
+    featuredContainer.innerHTML = "";
 
 products.forEach(function(product){
     let thumbnailUrl = product.images.length > 0 ? product.images[0].src : "";
@@ -48,6 +48,5 @@ products.forEach(function(product){
     </div>
     `
 })};
-displayFeatured(products)
 
 getProducts(baseUrl)
