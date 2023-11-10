@@ -53,7 +53,7 @@ getProducts(baseUrl)
 
 const openDetails = (dataUrl) => {
     if(dataUrl){
-        href.window.location = dataUrl;
+        window.location.href = dataUrl;
     }
 }
 
