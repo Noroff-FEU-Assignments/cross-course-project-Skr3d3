@@ -51,10 +51,16 @@ products.forEach(function(product){
 
 getProducts(baseUrl)
 
+const openDetails = (dataUrl) => {
+    if(dataUrl){
+        href.window.location = dataUrl;
+    }
+}
+
 featuredContainer.addEventListener("click", function(){
     const gameCard = clickedElement.closest(".gamecard")
     if(gameCard) {
-        const detailsUrl = gameCard.getAttribute("data-url");
-        openDetails(detailsUrl);
+        const featuredUrl = gameCard.getAttribute("data-url");
+        openDetails(featuredUrl);
     }
 })
