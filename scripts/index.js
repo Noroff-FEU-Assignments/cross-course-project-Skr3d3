@@ -13,7 +13,7 @@ const featuredText = document.querySelector(".featuredgamestext");
 
 const featuredContainer = document.getElementById("featuredgames");
 
-featuredText.style.display = "none";
+//featuredText.style.display = "none";
 
 async function getProducts(url){
 
@@ -26,7 +26,8 @@ async function getProducts(url){
         console.error("Error fetching products", error)
     }
     finally{
-        featuredText.style.display = "block";
+        featuredText.style.position = "relative";
+        featuredText.style.top = "auto";
     }
 }
 function displayFeatured(products){

@@ -477,6 +477,8 @@ body *:focus {
 .featuredgamestext {
     color: var(--white);
     text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
+    position:absolute;
+    top: -10px;
 }
 
 /*Aftersales pages*/
@@ -752,7 +754,7 @@ body *:focus {
     #mobilenav:checked ~ .checkboxhack {
         display:flex;
     }
-    #featuredgames {
+    #featuredgames, .featuredgamestext {
     display:none;
     }
 
