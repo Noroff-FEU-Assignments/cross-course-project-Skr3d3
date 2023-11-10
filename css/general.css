@@ -465,6 +465,19 @@ body *:focus {
     max-height: 30px;
     margin-left: 5px;
 }
+#featuredgames {
+    z-index: 1;
+    width:1000px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+}
+#featuredgames div span h2 {
+    text-shadow: 1px 1px 1px var(--white), -1px -1px 1px var(--white), 1px -1px 1px var(--white), -1px 1px 1px var(--white);
+}
+.featuredgamestext {
+    color: var(--white);
+    text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
+}
 
 /*Aftersales pages*/
 .aftersales-image, .aftersales-page {
@@ -636,6 +649,13 @@ body *:focus {
     .browse div span:first-child {
         flex-direction: column;
     }
+    #featuredgames {
+        width: 800px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #featuredgames div span h2 {
+        font-size: 100%;
+    }
 }
 @media screen and (max-width: 885px) {
     .browse {
@@ -665,8 +685,6 @@ body *:focus {
         max-width: 10rem;
         border-radius: 10px;
     }
-    /* Loading */
-
 
     /*About Page*/
     .about-page, .contact-page, .product-page {  
@@ -710,6 +728,9 @@ body *:focus {
         top: 700px;
         left: 30%;
     }
+    #featuredgames {
+        width:700px;
+    }
 }
 /* MOBILE */
 @media screen and (max-width: 700px) {
@@ -730,6 +751,9 @@ body *:focus {
     }
     #mobilenav:checked ~ .checkboxhack {
         display:flex;
+    }
+    #featuredgames {
+    display:none;
     }
 
 /* GENERAL */ 

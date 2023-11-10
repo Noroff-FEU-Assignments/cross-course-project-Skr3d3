@@ -24,7 +24,12 @@ setupBackButton();
 const searchBar = document.getElementById("search");
 const searchButton = document.querySelector(".searchbutton")
 
-searchButton.addEventListener("click", function(){
+searchButton.addEventListener("click", function(event){
+    event.preventDefault();
+    window.location.href = `/browse.html?search=${searchBar.value}`
+});
+searchBar.addEventListener("enter", function(event){
+    event.preventDefault();
     window.location.href = `/browse.html?search=${searchBar.value}`
 })
 

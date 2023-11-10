@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/58f57f3efa.js" crossorigin="anonymous"></script>
+    <script defer src="/scripts/script.js"></script>
+    <script defer src="/scripts/index.js"></script>
     <title>GameHub - The Universe of Games!</title>
 
     <!-- Hotjar Tracking script -->
@@ -31,11 +33,11 @@
             <a class="cta-round" href="browse.html" alt="Favorites"><i class="fa-regular fa-heart"></i></a>
             <a class="cta-round" href="cart.html" alt="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
         </section>
-            <div class="searchbar">
-                <input class="searchinput" placeholder="search..." type="textboxt" name="search" id="search">
+            <form class="searchbar">
+                <input class="searchinput" placeholder="Search games..." type="textboxt" name="search" id="search">
                 <label class="hidden" for="search">Searchbar</label>
                 <button class="searchbutton"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+            </form>
 
             <nav class="sidebar"> <!--Desktop navigation-->
                 <p class="active">Home</p>
@@ -65,6 +67,11 @@
 <main>
 
     <section id="maincontent" class="home-start">
+
+        <h2 class="featuredgamestext">Featured Games</h2>
+        <section id="featuredgames" class="browse">
+            </section>
+
         <h1 class="indexh1">Buy & Sell Games</h1>
         <a href="browse.html" class="cta big">Browse Games</a>
         <a href="loginsignup.html" class="cta">Sign up / Log in</a>
