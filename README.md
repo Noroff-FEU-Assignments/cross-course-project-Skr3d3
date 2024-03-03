@@ -4,6 +4,8 @@
 
 A school project. A site about bying and selling games on different platforms. None functional.
 
+`The page does not propely fetch data from the backend because of some issues on the server side.`
+
 ## Description
 
 A site about bying and selling games. The site is none functional as this is only meant for educational purposes.
