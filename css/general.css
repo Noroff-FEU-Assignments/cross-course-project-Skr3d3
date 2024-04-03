@@ -1,0 +1,926 @@
+@import url(variables.css);
+@import url(imagesize.css);
+/*All images are linked in imagesize.css for better load times on mobile devices*/
+
+/* GENERAL */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: verdana, tahoma, arial, sans-serif;
+    display: grid;
+    min-height: 100vh;
+    margin:0;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+main, h3 {
+    animation-name: "show-page";
+    animation: show-page 0.5s forwards;
+}
+main {
+    margin-left: 120px;
+    max-width: 100vw;
+}
+footer, header, .sidebar, .mobilenav, .skip {
+    background-color: var(--darkpurple);
+}
+:is(footer section, footer section li, header, nav) > * {
+    color: var(--white);
+    text-decoration: none;
+}
+h1, h2, h3, a, .checkboxhack, .sidebar, .pricetag  {
+    font-family: "MuseoModerno", monospace;
+    font-weight: bolder;
+}
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--purple);
+    text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
+}
+header h3 {
+    display:inline-flex;
+    align-items: end;
+    margin: 0 30px;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+header h3 > * {
+    color: var(--white);
+    text-decoration: none;
+}
+h2 {
+    color: var(--purple);
+    text-shadow: var(--darkpurple);
+}
+footer {
+    max-height: auto;
+    box-shadow: 0px -15px 18px 7px rgba(23,14,46,1);
+    z-index: 400;
+}
+.skip {
+    font-size: 0.5rem;
+    color: var(--white);
+    font-family: sans-serif;
+    font-weight: 100;
+    padding: 5px;
+    z-index: 501;
+    margin: 0 0 -1px 0;
+}
+.hidden {
+    display:none;
+}
+.error {
+    display: none;
+    font-size: 0.9rem;
+    color:red;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 0.2px;
+}
+.submitmessage {
+    font-size: 0.9rem;
+    color:green;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 0.2px;
+}
+.centeralignment {
+    display:flex;
+    justify-content: center;
+}
+.icon {
+    width: 4rem;
+    margin:auto;
+}
+.icon:is(:hover,:active) {
+    transform: scale(1.3);
+}
+/* Header */
+header:not(:last-child) /*not include mobile navigation*/ {
+    display:grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: repeat(2, 50%);
+    height: 120px;
+    z-index: 500;
+    padding: 5px 10px 0 0;
+    box-shadow: 0px 15px 18px 7px rgba(23,14,46,1);
+}
+.logo {
+    top: 35px;
+    width: 280px;
+    position: fixed;
+    z-index: 100;
+}
+.headericons a:first-child {
+    margin: auto 10px;
+    min-width: 100px;
+}
+.headericons {
+    display: inline-flex;
+    justify-content: end;
+    grid-column-start: 4;
+}
+.headericons > * {
+    margin: 0 5px;
+}
+.searchinput {
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px 0;
+}
+.searchbutton {
+    background-color: var(--darkpurple);
+    color: var(--white);
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0 15px 5px 0
+}
+.searchbar {
+    grid-column-start: 4;
+    grid-row-start: 2;
+    display:inline-flex;
+    align-items:end;
+    justify-content: end;
+}
+:is(.sidebar, .checkboxhack)  a:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+}
+.cta-round {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.cta {
+    width: 20%;
+    min-width: 190px;
+    border: solid var(--darkpurple) 1px;
+    padding: 10px 50px;
+    margin: 5px 0;
+    white-space: nowrap;
+    border-radius: 40px 0 40px 0;
+}
+.cta, .cta-round {
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: var(--purple);
+    color: var(--white);
+    display: inline-flex;
+    position: static;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.7),0px 10px 15px -3px rgba(0,0,0,0.7);
+    box-shadow: inset 0px 0px 5px 1px rgba(23,14,46,1);
+    transition-property: transform;
+    transition-duration: 0.2s;
+}
+body *:focus {
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.7);
+}
+:is(.cta, .cta-round):focus {
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.7);
+}
+.big {
+    transform: scale(1.4);
+    margin: 20px;
+}
+.cta-aftersales {
+    background-color: #CC356E;
+    margin: 30px;
+    position: fixed;
+    top: 80vh;
+    left: 20vw;
+}
+:is(.cta, .cta-round, .big):is(:hover, :active) {
+    color: var(--purple);
+    background-color: var(--white);
+    white-space: nowrap;
+    transform: scale(1.03);
+}
+:is(.cta, .cta-round):active {
+    transition-property: transform;
+    transition-duration: 0s;
+    transform: scale(0.8);
+}
+.big:hover {
+    transform: scale(1.5);
+}
+.cta-active {
+    color: var(--purple);
+    background-color: var(--white);
+}
+.active, a:active :not(.skip) {
+    text-shadow: 0px -2px 7px var(--white);
+    font-size: 130%;
+    cursor: default;
+}
+.disabled {
+    color: var(--purple);
+    background-color: var(--white);
+    white-space: nowrap;
+}
+.disabled:is(:hover,:active) {
+    transform: scale(1);
+}
+#goback {
+    cursor: pointer;
+    opacity: 70%;
+    max-width: 50px;
+}
+.sidebar {
+    margin: 0;
+    height: 100%;
+    top: -10px;
+    width: 100px;
+    padding: 20rem 10px;
+    box-shadow: 15px 5px 18px 7px rgba(23,14,46,1);
+    position: fixed;
+    display: flex;
+    flex-direction:column;
+    text-decoration: underline;
+}
+.sidebar > * {
+    margin: 30px 10px;    
+}
+.desktopfooter > * {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0 0 10px 0;
+}
+.desktopfooter ul li {
+    margin: 0px 20px;
+}
+.desktopfooter ul li a {
+    padding: 20px;
+}
+.mobilenav {
+    display:none;
+}
+
+/*Landing Page*/
+.indexh1:after {
+    content: " on ALL platforms!";
+}
+.indexh1 {
+    color: var(--white);
+}
+.home-start, .home-end, .loginsignup {
+    display:flex;
+    flex-flow: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: 30% 15%;
+}
+:is(.home-start, .home-end) > * {
+    margin:25px;
+}
+.home-end a:last-child {
+    margin: 25px auto 10%;
+}
+.home-end {
+    justify-content: end;
+}
+.arrowimg {
+    transition-property: transform;
+    transition: 0.2s;
+    margin:0 0 50px 0;
+}
+.arrowimg:is(:hover, :active) {
+    transform: scale(1.1);
+}
+.sellingpoints-section-1, .sellingpoints-section-2 {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 50px;
+}
+:is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 0.3rem #170e2e57;
+    background-color: #ffffffb3;
+    max-width: 50rem;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 100px 50px;
+    margin: auto;
+}
+.sellingpoints-section-1 {
+    background-position: 50% 10%;
+    background-size: cover;
+}
+.sellingpoints-section-2 {
+    background-position: 10%;
+    background-size: cover;
+}
+/*Other Pages General*/
+.about-page, .contact-page, .product-page {  
+    display:grid;
+    grid-template-columns: 60% 40%;
+    max-width: 100vw;
+    min-height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.contactform {
+    display: flex;
+    flex-direction: column;
+}
+.contactform > input {
+    margin-bottom: 20px;
+}
+.textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 100px 0;
+}
+.about-image, .contact-image, .aftersales-image, .product-image {
+    border-radius: 10px 0 0 10px;
+    margin-top: -15vh;
+    background-size: cover;
+}
+.textarea pre {
+    font-size: 1.5rem;
+}
+.pricetag {
+    color: var(--purple);
+    text-shadow: 1px 1px 1px var(--darkpurple), -1px -1px 1px var(--darkpurple), 1px -1px 1px var(--darkpurple), -1px 1px 1px var(--darkpurple);
+    box-shadow: 0 0 10px 1px var(--darkpurple);
+    background-color: var(--white);
+    border: solid var(--darkpurple) 2px;
+    padding: 2px 20px;
+}
+.sale {
+    color: var(--pink);
+    border-color: var(--pink)
+}
+.oldprice {
+    opacity: 70%;
+    text-decoration: line-through solid #cc356f7e 0.3rem;
+    padding: 0px 10px;
+}
+.oldprice:before, .oldprice:after {
+    content:"--";
+    text-decoration: line-through solid var(--pink) 0.4rem;
+}
+.product-page h2 {
+    margin: 10px;
+    padding: 5px 10px;
+}
+.product-image {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+    margin: 20px;
+}
+.product-thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 100%;
+}
+.product-thumbnails > * {
+    max-width: 25%;
+}
+.games-page {
+    margin: 50px 10px 50px 140px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gamecard {
+    transition-property: transform;
+    transition-duration: 0.4s;
+
+}
+.gamecard:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.browse {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+.browse div {
+    display: flex;
+    flex-direction: column;
+    border: solid 0.3rem #170e2e57;
+    max-width: 600px
+}
+.browse div .cta-round {
+    position: absolute;
+    align-self: end;
+    margin-top: 5px;
+}
+.browse div img {
+    max-width:100%;
+    margin: auto;
+    opacity: 90%;
+    z-index: -1;
+}
+.browse div span :is(h2, p) {
+    margin: 10px;
+    white-space: nowrap;
+}
+.browse div span:nth-child(2), .browsebuttons { 
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.browse div span:first-child {
+    font-size: 1.5rem;
+}
+.browsebuttons > * {
+    min-width: 70px;
+    max-height: 100%;
+    padding: 10px 14%;
+    margin: 20px 20px;
+}
+.sortcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.sortcontainer button {
+    max-width: 50px;
+    max-height: 30px;
+    margin-left: 5px;
+}
+#featuredgames {
+    z-index: 1;
+    width:1000px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+}
+#featuredgames div span h2 {
+    text-shadow: 1px 1px 1px var(--white), -1px -1px 1px var(--white), 1px -1px 1px var(--white), -1px 1px 1px var(--white);
+}
+.featuredgamestext {
+    color: var(--white);
+    text-shadow: -2px 0 #170E2E, 0 2px #170E2E, 2px 0 #170E2E, 0 -2px #170E2E;
+    position:absolute;
+    top: -10px;
+}
+
+/*Aftersales pages*/
+.aftersales-image, .aftersales-page {
+    background-position: 0% 60%;
+}
+.aftersales-textarea {
+    grid-area: text;
+    max-height: 140px;
+    display:inline-flex;
+    flex-direction: column;
+    align-items: center;;
+    margin-bottom: 50px;
+}
+.aftersales-page form {
+    top: 700px;
+    left: 10vw;
+    position:absolute;
+    display: none;
+    flex-direction: column;
+}
+.checkout {
+    display: flex;
+}
+.checkout-textarea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10vh 0 100vh 0;
+}
+
+.visaform, .paypalform, .vippsform, .checkout-textarea div:nth-child(2) {
+    border: solid 0.3rem #170e2e57;
+    background-color: #ffffffb3;
+    border-radius: 10px;
+    padding: 20px;
+}
+.orders-area {
+    grid-area: orders;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 100px 10px;
+}
+.order {
+    display:flex;
+    flex-direction: column-reverse;
+}
+.order a {
+    align-self: end;
+    min-width: 20%;
+    margin: 0 30px 10px 0;
+}
+.order table {
+    display: block; 
+}
+.orders-area > div {
+    border: solid 0.3rem #170e2e57;
+    background-color: #ffffffb3;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 95vw;
+    min-height: 200px;
+    margin: 10px auto;
+}
+.plusminusbutton {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.cart {
+    text-align: left;
+}
+.thumbnail {
+    width: 90%;
+    margin: 5px;
+}
+.inputbox {
+    max-width: 80%;
+    border-radius: 15px;
+    min-width: 200px;
+    min-height: 30px;
+    margin: 10px;
+}
+.quantity-box {
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px 5px;
+    width: 60px;
+    height: 40px;
+}
+.aftersales-image {
+    grid-area: image;
+}
+.aftersales-page {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    min-height: 80vh;
+    background-size: cover;
+}
+
+.loadingcontainer {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+  }
+  
+  .loading {
+    display: inline-block;
+  }
+  
+  .dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--pink);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px;
+    animation: wave 1.5s ease-in-out infinite, blink 1s ease-in-out infinite;
+  }
+  .dotcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .dot1 {
+    animation-delay: 0.2s;
+  }
+  
+  .dot2 {
+    animation-delay: 0.4s;
+  }
+  
+  .dot3 {
+    animation-delay: 0.6s;
+  }
+  .dot4 {
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+
+/* Browse page */
+@media screen and (max-width: 1379px) {
+    .browse {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 30px;
+        
+    }
+    .browse div span:first-child {
+        flex-direction: column;
+    }
+    #featuredgames {
+        width: 800px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #featuredgames div span h2 {
+        font-size: 100%;
+    }
+}
+@media screen and (max-width: 885px) {
+    .browse {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* TABLET */
+@media screen and (max-width:1015px) {
+
+    header {
+        grid-template-columns: 9em 1fr auto auto;
+    }
+    header h3 {
+            display:none;
+    }
+    h1 {
+        color: var(--purple);
+    }
+    main {
+    margin-left: 120px;
+    }
+    .indexh1 {
+        font-size: 130%;
+    }
+    :is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
+        max-width: 10rem;
+        border-radius: 10px;
+    }
+
+    /*About Page*/
+    .about-page, .contact-page, .product-page {  
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -15vh;
+    }    
+    .textarea {
+        border: solid 0.3rem #170e2e57;
+        background-color: #ffffffb3;
+        max-width: 300px;
+        min-width: 150px;
+        border-radius: 10px;
+        padding: 50px;
+        margin: 20vh 0;
+    } 
+    .textarea div {
+        white-space: nowrap;
+    }
+    .textarea .big {
+        transform: scale(1);
+        margin: 20px;
+    }
+    .textarea .big:hover {
+        transform: scale(1.1);
+    }
+    .aftersales-textarea {
+        margin-top: 10vh;
+    }
+    .orders-area {
+        margin-bottom: 30vh;
+    }
+    .browse {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cta-aftersales {
+        left: 37vw;
+    } 
+    .aftersales-page form {
+        top: 700px;
+        left: 30%;
+    }
+    #featuredgames {
+        width:700px;
+    }
+}
+/* MOBILE */
+@media screen and (max-width: 700px) {
+    
+/* MOBILENAV CHECKBOXHACK */
+    .checkboxhack > * {
+        background-color: var(--darkpurple);
+        color: var(--white);
+        margin: 5px 0;
+        padding: 5px 0;
+        text-decoration: none;
+    }
+    .checkboxhack {
+        display:none;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    #mobilenav:checked ~ .checkboxhack {
+        display:flex;
+    }
+    #featuredgames, .featuredgamestext {
+    display:none;
+    }
+
+/* GENERAL */ 
+    footer {
+        padding-bottom: 100px;
+    }
+    header {
+        position: fixed;
+        width: 100vw;
+        height: 100px;
+    }
+    main {
+        margin: 0;
+    }
+    .headericons :is(a, .cta-round) {
+        display:none;
+    } 
+    .indexh1:after {
+        content: "!";
+    }
+    .logocontainer {
+        content: url("/images/gamehublogomobile.gif");
+        position: fixed;
+        top:0;
+    }
+    .skip {
+        display:none;
+    }
+    :is(.sellingpoints-section-1, .sellingpoints-section-2) > div {
+        max-width: 50%;
+        min-width: 200px;
+        max-height: 300px;
+        overflow:scroll;
+        border-radius: 10px;
+    }
+    .desktopfooter ul:last-child {
+        justify-content: end;
+        margin: -25px 15px 0 0;
+    }  
+    .desktopfooter ul:first-child {
+        justify-content: start;
+        margin: 5px 0 0 -35px;
+    }   
+    .desktopfooter ul li a {
+        padding: 10px;
+    }     
+    .searchbutton {
+        display:none;
+    }
+    .searchbar {
+        z-index: 10000;
+        position:fixed;
+        right: -10px;;
+        top: 10px;
+        transform: scale(0.8)
+    }
+    .mobilemenu {
+        display: flex;
+        justify-content: center;
+        margin-top: -90px;
+    }
+    .mobilenav {
+        display: block;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        min-width: 100%;
+        width: 100vw;
+    }
+    .mobilenav section:first-of-type {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 5px 20px;
+    }
+    .mobilenav {
+        display: flex;
+        flex-direction: column;
+    }
+    .mobilenav :first-child :not(:first-child):not(:last-child)  {
+        margin: 0 14%;
+    }
+    .checkboxhack a {
+        margin: 0;
+    }
+    .big {
+        transform: scale(1.2);
+    }
+    .cta-round {
+        z-index: 1000;
+        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+    .sidebar {
+        display:none;
+    }
+    .cta-aftersales {
+        top: 71vh;
+        left: 10vw;
+    }
+
+/*Other Pages*/
+    main {
+        margin-top: 100px;
+    }
+    .contact-page .textarea {
+        max-width: 50vw;
+    }
+    .about-page, .contact-page, .games-page, .aftersales-page, .product-page {
+        margin: 120px 0 0 0;
+    }
+    .browse {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .browse div span:first-child {
+        flex-direction: row;
+    }
+    .games-page {
+        margin-top: 160px
+    }
+    .aftersales-page form {
+        top: 700px;
+        left:0;
+        margin: 5px;
+    }
+    .aftersales-page form {
+        top: 550px;
+    }
+}
+
+/* DESKTOP ONLY */
+@media screen and (min-width: 1016px) { 
+
+:is(.textarea, .contact-page) :is(p, pre) {
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.3rem #170e2e57;
+    background-color: #ffffffb3;
+    max-width: 10rem;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 100px 50px;
+    margin: 0;
+}
+.aftersales-page {
+    display: grid;
+    grid-template-areas: 
+    "text   text    image"
+    "orders orders  image"
+    "orders orders  image"   
+    "orders orders  image";
+    grid-template-rows: 10% 1fr 1fr 1fr;
+    grid-template-columns: 30% 30% 40%;
+}
+.contact-page pre {
+    font-size: 2rem;
+    padding: 30px;
+}
+}
+
+/* KEYFRAMES */
+@keyframes show-page {
+    0% { opacity: 0; }
+    50% { opacity: 50%; }
+    100% { opacity: 100% }
+}

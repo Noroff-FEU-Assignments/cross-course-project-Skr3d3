@@ -1,0 +1,89 @@
+/* MOBILE DEVICE ONLY */
+@media screen and (max-width:1015px) {
+
+.error404 {
+    background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
+}
+.home-start, .loginsignup {
+    background-image: linear-gradient(#f6eef614, var(--white)), url("../images/mobile/manwithvrheadset.gif");
+}
+.home-end {
+    background-image: linear-gradient(var(--white), #f6eef614), url("../images/mobile/gameover.gif");
+}
+.sellingpoints-section-1 {
+    background: linear-gradient(var(--white), #f6eef643), url(../images/mobile/womanpointing.gif);
+}
+.sellingpoints-section-2 {
+    background: linear-gradient(#f6eef643, var(--white)), url(../images/mobile/maninfrontoftv.gif);
+}
+.about-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/twocontrollers.gif)
+}
+.contact-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/manoncomputer.gif)
+}
+.aftersales-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/mobile/controller-mac.gif)
+}
+/*Product Pages*/
+.product1-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers.gif)
+}
+.product2-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers2.gif)
+}
+.product3-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers3.gif)
+}
+.product4-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers4.gif)
+}
+.product5-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers5.gif)
+}
+.product6-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers6.gif)
+}
+.product7-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers7.gif)
+}
+.product8-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers8.gif)
+}
+.product9-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers9.gif)
+}
+.product10-page {
+    background: linear-gradient(#f6eef643, #f6eef643), url(../images/thumbnails/GameHub_covers10.gif)
+}
+}
+
+
+/* DESKTOP ONLY */
+@media screen and (min-width:1016px) {
+
+    .error404 {
+        background-image: linear-gradient(#f6eef614, var(--white)), url("../images/manwithvrheadset.gif");
+    }
+    .home-start, .loginsignup {
+        background-image: linear-gradient(#f6eef614, var(--white)), url("../images/manwithvrheadset.gif");
+    }
+    .home-end {
+        background-image: linear-gradient(var(--white), #f6eef614), url("../images/gameover.gif");
+    }
+    .sellingpoints-section-1 {
+        background: linear-gradient(var(--white), #f6eef643), url(../images/womanpointing.gif);
+    }
+    .sellingpoints-section-2 {
+        background: linear-gradient(#f6eef643, var(--white)), url(../images/maninfrontoftv.gif);
+    }
+    .about-image {
+        background: linear-gradient(#f6eef643, #f6eef643), url(../images/twocontrollers.gif)
+    }
+    .contact-image {
+        background: linear-gradient(#f6eef643, #f6eef643), url(../images/manoncomputer.gif)
+    }
+    .aftersales-image {
+        background: linear-gradient(#f6eef643, #f6eef643), url(../images/controller-mac.gif)
+    }
+}
